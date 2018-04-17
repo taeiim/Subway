@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginTop="4dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/honeyrank_cardview_height"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/honeyRank_imgView"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3">
+
+                    <ImageView
+                        android:id="@+id/honeyRank_rankImg"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/rank2" />
+
+                    <TextView
+                        android:id="@+id/honeyRank_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@id/honeyRank_rankImg"
+                        android:text="에그참치마요"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="24dp"
+                        android:background="#E7E7E7" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="5"
+                    android:padding="7dp">
+
+                    <TextView
+                        android:id="@+id/honeyRank_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:maxLines="2"
+                        android:text="에그 스크램블 + 핫소스에그 스크램블 + 핫소스+ 칠리 +후추 +토마토 + 베이컨 + 옥수수콘 + 슈레드치즈+ 칠리."
+                        android:textColor="#6A6A6A"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="2dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/honeyRank_desc"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:layout_alignParentBottom="true"
+                        >
+
+                        <RatingBar
+                            android:id="@+id/honeyRank_ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:isIndicator="false"
+                            android:max="5"
+                            android:numStars="5"
+                            android:progressTint="#FAC917"
+                            android:rating="4"
+                            android:stepSize="0.5" />
+
+                        <TextView
+                            android:id="@+id/honeyRank_starTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.0"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12dp"
+                            android:paddingLeft="4dp"
+                            android:textStyle="bold"
+                            android:layout_toRightOf="@id/honeyRank_ratingBar"/>
+
+                        <TextView
+                            android:id="@+id/honeyRank_starPeoCntTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(28)"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="12dp"
+                            android:paddingLeft="4dp"
+                            android:textStyle="bold"
+                            android:layout_toRightOf="@id/honeyRank_starTv"/>
+
+                        <com.sackcentury.shinebuttonlib.ShineButton
+                            android:id="@+id/po_image2"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@android:color/darker_gray"
+                            app:btn_color="@android:color/darker_gray"
+                            app:btn_fill_color="@android:color/holo_red_light"
+                            app:allow_random_color="false"
+                            app:siShape="@raw/heart"
+                            android:layout_toLeftOf="@+id/honeyRank_heartCnt"/>
+
+                        <TextView
+                            android:id="@+id/honeyRank_heartCnt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="163"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="4dp"
+                            android:textSize="12dp"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/honeyRank_imgView"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="#000000" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
