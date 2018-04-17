@@ -21,7 +21,7 @@
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="16dp"
-                android:src="@drawable/icon_back" />
+                android:src="@drawable/ic_back" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -54,5 +54,5 @@
         android:id="@+id/honeyRank_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp"/>
+        android:paddingBottom="8dp"/>
 </LinearLayout>

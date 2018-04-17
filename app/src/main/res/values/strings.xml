@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Subway</string>
+    <string name="tab1">꿀조합</string>
+    <string name="tab2">메뉴</string>
+    <string name="tab3">매장찾기</string>
+    <string name="tab4">이벤트</string>
+    <string name="tab5">마이페이지</string>
+
 </resources>
