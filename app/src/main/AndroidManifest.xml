@@ -18,6 +18,7 @@
         <activity android:name=".Activity.HoneyRankActivity">
 
         </activity>
+        <activity android:name=".Activity.EventDetailActivity"/>
     </application>
 
 </manifest>

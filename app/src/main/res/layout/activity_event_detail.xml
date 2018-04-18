@@ -9,7 +9,8 @@
         android:id="@+id/eventDetail_toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/main_toolbar_height"
-        app:contentInsetStart="0dp">
+        app:contentInsetStart="0dp"
+        android:background="@color/colorWhite">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -49,7 +50,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:orientation="vertical"
                 android:padding="16dp">
@@ -61,7 +62,8 @@
                     android:layout_marginBottom="2dp"
                     android:maxLines="1"
                     android:text="신제품 출시 하하하하하"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@+id/eventDetail_periodTv"
@@ -83,7 +85,7 @@
             <ImageView
                 android:id="@+id/eventDetail_imgView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="600dp"
                 android:layout_margin="16dp"/>
         </LinearLayout>
     </ScrollView>

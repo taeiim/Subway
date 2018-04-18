@@ -11,7 +11,8 @@
         android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/main_toolbar_height"
-        app:contentInsetStart="0dp">
+        app:contentInsetStart="0dp"
+        android:background="@color/colorWhite">
 
         <RelativeLayout
             android:layout_width="match_parent"
