@@ -19,7 +19,7 @@
         app:sc_corner_radius="10dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        app:sc_tint_color="@color/colorAccent"
+        app:sc_tint_color="#32B238"
         app:sc_checked_text_color="@color/colorWhite"
         android:checkedButton="@id/button1"
         android:background="@color/colorWhite">
