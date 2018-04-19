@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="@dimen/store_spinner_height"
+                android:layout_weight="1"
+                style="@style/SpinnerYellow"
+                android:spinnerMode="dropdown"/>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="@dimen/store_spinner_height"
+                android:layout_weight="1"/>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="@dimen/store_spinner_height"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:background="@drawable/btn_search_yellow"
+            android:text="검색하기"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="13dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginLeft="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지역별 검색 결과  "
+            android:textColor="#000"
+            android:textSize="13dp"/>
+
+        <TextView
+            android:id="@+id/storeAddress_resultCntTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textSize="14dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 건"
+            android:textColor="#000"
+            android:textSize="13dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#C8C8C8"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/storeAddress_recyclerVieew"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

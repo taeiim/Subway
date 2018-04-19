@@ -17,16 +17,7 @@ public class HoneyFragment extends android.support.v4.app.Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_honey,container,false);
-        return view;
+        View rootView = inflater.inflate(R.layout.fragment_honey,container,false);
+        return rootView;
     }
-//
-//    public static HoneyFragment newInstance(){
-//        Bundle args = new Bundle();
-//
-//        HoneyFragment honeyFragment = new HoneyFragment();
-//        honeyFragment.setArguments(args);
-//
-//        return honeyFragment;
-//    }
 }
