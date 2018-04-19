@@ -8,16 +8,22 @@ public class StoreItem {
     private String storeName;
     private String storeAddress;
     private String distance;
+    private String storeOpeningTime;
+    private String storeTellNum;
 
-    public StoreItem(String storeName, String storeAddress) {
-        this.storeName = storeName;
-        this.storeAddress = storeAddress;
-    }
-
-    public StoreItem(String storeName, String storeAddress, String distance) {
+    public StoreItem(String storeName, String storeAddress, String distance, String storeOpeningTime, String storeTellNum) {
         this.storeName = storeName;
         this.storeAddress = storeAddress;
         this.distance = distance;
+        this.storeOpeningTime = storeOpeningTime;
+        this.storeTellNum = storeTellNum;
+    }
+
+    public StoreItem(String storeName, String storeAddress, String storeOpeningTime, String storeTellNum) {
+        this.storeName = storeName;
+        this.storeAddress = storeAddress;
+        this.storeOpeningTime = storeOpeningTime;
+        this.storeTellNum = storeTellNum;
     }
 
     public String getStoreName() {
@@ -42,5 +48,21 @@ public class StoreItem {
 
     public void setDistance(String distance) {
         this.distance = distance;
+    }
+
+    public String getStoreOpeningTime() {
+        return storeOpeningTime;
+    }
+
+    public void setStoreOpeningTime(String storeOpeningTime) {
+        this.storeOpeningTime = storeOpeningTime;
+    }
+
+    public String getStoreTellNum() {
+        return storeTellNum;
+    }
+
+    public void setStoreTellNum(String storeTellNum) {
+        this.storeTellNum = storeTellNum;
     }
 }

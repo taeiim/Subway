@@ -69,12 +69,12 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:paddingBottom="16dp"
+                        android:paddingBottom="20dp"
                         android:text="대전카이스트점"
                         android:textColor="#000"
                         android:textSize="17dp"
                         android:textStyle="bold"
-                        android:paddingTop="18dp"/>
+                        android:paddingTop="20dp"/>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -132,13 +132,18 @@
                                 android:textColor="#000"
                                 android:textSize="14dp"/>
 
-                            <ImageView
+                            <TextView
                                 android:id="@+id/storeDialog_24Icon"
-                                android:layout_width="wrap_content"
-                                android:layout_height="14dp"
+                                android:layout_width="50dp"
+                                android:layout_height="20dp"
                                 android:layout_alignParentRight="true"
-                                android:src="@drawable/ic_call"
-                                android:layout_marginTop="2dp"/>
+                                android:text="24시간"
+                                android:textColor="#FFFFFF"
+                                android:background="@drawable/back_yellow_24"
+                                android:textSize="11dp"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:visibility="gone"/>
                         </RelativeLayout>
 
                         <RelativeLayout

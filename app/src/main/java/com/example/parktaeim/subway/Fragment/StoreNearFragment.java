@@ -1,20 +1,16 @@
 package com.example.parktaeim.subway.Fragment;
 
-import android.content.Intent;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.TextView;
 
-import com.example.parktaeim.subway.Activity.EventDetailActivity;
 import com.example.parktaeim.subway.Adapter.StoreAdapter;
 import com.example.parktaeim.subway.Model.StoreItem;
 import com.example.parktaeim.subway.R;
@@ -47,9 +43,17 @@ public class StoreNearFragment extends Fragment {
         recyclerView.addOnItemTouchListener(new RecyclerViewClickListener(getContext(), recyclerView, new RecyclerViewClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                StoreDetailDialog storeDetailDialog = new StoreDetailDialog(getContext());
-                storeDetailDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-                storeDetailDialog.show();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                StoreDetailDialog storeDetailDialog = new StoreDetailDialog();
+
+                Bundle args = new Bundle();
+                args.putString("name",storeItemArrayList.get(position).getStoreName());
+                args.putString("address",storeItemArrayList.get(position).getStoreAddress());
+                args.putString("tellNum",storeItemArrayList.get(position).getStoreTellNum());
+                args.putString("openingTime",storeItemArrayList.get(position).getStoreOpeningTime());
+
+                storeDetailDialog.setArguments(args);
+                storeDetailDialog.show(fragmentManager,"store_info");
 
             }
 
@@ -66,11 +70,11 @@ public class StoreNearFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","서울특별시 광진구 능동로 290 삼일빌딩","600m"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","00:00 ~ 24:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
 
         adapter = new StoreAdapter(storeItemArrayList);
         recyclerView.setAdapter(adapter);

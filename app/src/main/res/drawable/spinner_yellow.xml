@@ -13,7 +13,7 @@
             <!--<item android:right="10dp">-->
                 <!--<bitmap-->
                     <!--android:src="@drawable/ic_down_arrow"-->
-                    <!--android:gravity="center_vertical|right"/>-->
+                    <!--android:gravity="center_vertical|right" />-->
             <!--</item>-->
 
         </layer-list>

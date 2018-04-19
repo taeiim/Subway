@@ -44,11 +44,11 @@ public class StoreAddressFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","서울특별시 광진구 능동로 290 삼일빌딩","600m"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
 
         adapter = new StoreAdapter(storeItemArrayList);
         recyclerView.setAdapter(adapter);
