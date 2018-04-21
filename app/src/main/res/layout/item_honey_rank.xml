@@ -118,16 +118,16 @@
                             android:textStyle="bold"
                             android:layout_toRightOf="@id/honeyRank_starTv"/>
 
-                        <com.sackcentury.shinebuttonlib.ShineButton
-                            android:id="@+id/po_image2"
+                        <ToggleButton
+                            android:id="@+id/honeyRank_heartBtn"
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:src="@android:color/darker_gray"
-                            app:btn_color="@android:color/darker_gray"
-                            app:btn_fill_color="@android:color/holo_red_light"
-                            app:allow_random_color="false"
-                            app:siShape="@raw/heart"
-                            android:layout_toLeftOf="@+id/honeyRank_heartCnt"/>
+                            android:background="@drawable/button_heart"
+                            android:checked="false"
+                            android:text=""
+                            android:textOff=""
+                            android:textOn=""
+                            android:layout_toLeftOf="@+id/honeyRank_heartCnt" />
 
                         <TextView
                             android:id="@+id/honeyRank_heartCnt"

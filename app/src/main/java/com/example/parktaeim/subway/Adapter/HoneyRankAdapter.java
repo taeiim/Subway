@@ -5,9 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.ScaleAnimation;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.example.parktaeim.subway.Model.HoneyRankItem;
 import com.example.parktaeim.subway.R;
@@ -21,6 +26,7 @@ import java.util.ArrayList;
 public class HoneyRankAdapter extends RecyclerView.Adapter<HoneyRankAdapter.ViewHolder> {
 
     private ArrayList<HoneyRankItem> honeyRankItemArrayList = new ArrayList<>();
+    private ScaleAnimation scaleAnimation;
 
     public HoneyRankAdapter(ArrayList<HoneyRankItem> honeyRankItemArrayList) {
         this.honeyRankItemArrayList = honeyRankItemArrayList;
@@ -42,6 +48,24 @@ public class HoneyRankAdapter extends RecyclerView.Adapter<HoneyRankAdapter.View
         holder.starPeoCntTv.setText(String.valueOf(honeyRankItemArrayList.get(position).getStarPeoCnt()));
         holder.heartTv.setText(String.valueOf(honeyRankItemArrayList.get(position).getHeartCnt()));
 
+        setUpHeartAnimation();
+        holder.heartBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                //animation
+                compoundButton.startAnimation(scaleAnimation);
+            }
+
+        });
+    }
+
+    private void setUpHeartAnimation() {
+        scaleAnimation = new ScaleAnimation(0.7f, 1.0f, 0.7f, 1.0f, Animation.RELATIVE_TO_SELF, 0.7f, Animation.RELATIVE_TO_SELF, 0.7f);
+        scaleAnimation.setDuration(500);
+        BounceInterpolator bounceInterpolator = new BounceInterpolator();
+        scaleAnimation.setInterpolator(bounceInterpolator);
+
+
     }
 
     @Override
@@ -57,6 +81,7 @@ public class HoneyRankAdapter extends RecyclerView.Adapter<HoneyRankAdapter.View
         TextView starPeoCntTv;
         ImageView honeyImgView;
         RatingBar starRatingBar;
+        ToggleButton heartBtn;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -67,6 +92,7 @@ public class HoneyRankAdapter extends RecyclerView.Adapter<HoneyRankAdapter.View
             starPeoCntTv = (TextView) itemView.findViewById(R.id.honeyRank_starPeoCntTv);
             honeyImgView = (ImageView) itemView.findViewById(R.id.honeyRank_imgView);
             starRatingBar = (RatingBar) itemView.findViewById(R.id.honeyRank_ratingBar);
+            heartBtn = (ToggleButton) itemView.findViewById(R.id.honeyRank_heartBtn);
         }
     }
 }
