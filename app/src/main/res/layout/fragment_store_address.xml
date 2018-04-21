@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -17,21 +18,37 @@
             android:orientation="horizontal">
 
             <Spinner
+                android:id="@+id/store_spinner1"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/store_spinner_height"
                 android:layout_weight="1"
-                style="@style/SpinnerYellow"
-                android:spinnerMode="dropdown"/>
+                android:spinnerMode="dropdown"
+                android:background="@drawable/solid_yellow"
+                android:dropDownVerticalOffset="@dimen/store_spinner_height"
+                android:popupBackground="@drawable/store_address_spinner"
+                android:layout_marginRight="8dp"/>
 
             <Spinner
+                android:id="@+id/store_spinner2"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/store_spinner_height"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/solid_yellow"
+                android:dropDownVerticalOffset="@dimen/store_spinner_height"
+                android:popupBackground="@drawable/store_address_spinner" />
 
             <Spinner
+                android:id="@+id/store_spinner3"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/store_spinner_height"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:spinnerMode="dropdown"
+                android:background="@drawable/solid_yellow"
+                android:dropDownVerticalOffset="@dimen/store_spinner_height"
+                android:popupBackground="@drawable/store_address_spinner"
+                android:layout_marginLeft="8dp"/>
+
         </LinearLayout>
 
         <Button

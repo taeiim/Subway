@@ -5,16 +5,13 @@
             <item>
                 <shape android:shape="rectangle">
                     <stroke android:width="2dp" android:color="@color/colorPrimary" />
-                    <corners android:radius="20dp" />
+                    <corners android:radius="15dp" />
                     <solid android:color="#fff" />
+                    <padding android:top="8dp"/>
+                    <padding android:bottom="8dp"/>
+
                 </shape>
             </item>
-
-            <!--<item android:right="10dp">-->
-                <!--<bitmap-->
-                    <!--android:src="@drawable/ic_down_arrow"-->
-                    <!--android:gravity="center_vertical|right" />-->
-            <!--</item>-->
 
         </layer-list>
     </item>

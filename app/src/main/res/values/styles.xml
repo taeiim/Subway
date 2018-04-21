@@ -13,6 +13,7 @@
     </style>
     
     <style name="SpinnerYellow" parent="@style/Widget.AppCompat.Spinner">
-        <item name="android:background">@drawable/spinner_yellow</item>
+        <item name="android:background">@drawable/store_address_spinner</item>
     </style>
+
 </resources>

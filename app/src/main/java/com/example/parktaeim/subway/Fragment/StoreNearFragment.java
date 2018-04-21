@@ -40,6 +40,24 @@ public class StoreNearFragment extends Fragment {
         TextView resultCntTv = (TextView) rootView.findViewById(R.id.storeNear_resultCntTv);
         resultCntTv.setText(String.valueOf(storeItemArrayList.size()));
 
+        return rootView;
+    }
+
+    private void setUpRecyclerView() {
+        recyclerView = (RecyclerView) rootView.findViewById(R.id.storeNear_recyclerVieew);
+        layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","00:00 ~ 24:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
+
+        adapter = new StoreAdapter(storeItemArrayList);
+        recyclerView.setAdapter(adapter);
+
+        // dialog로 값 전달
         recyclerView.addOnItemTouchListener(new RecyclerViewClickListener(getContext(), recyclerView, new RecyclerViewClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
@@ -62,21 +80,5 @@ public class StoreNearFragment extends Fragment {
 
             }
         }));
-        return rootView;
-    }
-
-    private void setUpRecyclerView() {
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.storeNear_recyclerVieew);
-        layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","00:00 ~ 24:00","042-949-2234"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
-        storeItemArrayList.add(new StoreItem("천안 충무로점","충청남도 천안시 서북구 충무로 201","600m","08:00~23:00","042-949-2234"));
-
-        adapter = new StoreAdapter(storeItemArrayList);
-        recyclerView.setAdapter(adapter);
     }
 }
