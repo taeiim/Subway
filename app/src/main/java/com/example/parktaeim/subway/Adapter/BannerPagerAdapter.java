@@ -29,7 +29,6 @@ public class BannerPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        Log.d("banner img list size===",String.valueOf(bannerImgArrayList.size()));
         return bannerImgArrayList.size();
     }
 

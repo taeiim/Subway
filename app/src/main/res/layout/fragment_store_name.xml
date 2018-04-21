@@ -21,7 +21,8 @@
             android:hint="매장명 입력"
             android:paddingLeft="16dp"
             android:paddingRight="12dp"
-            android:textSize="13dp" />
+            android:textSize="13dp"
+            android:maxLines="1"/>
     </LinearLayout>
 
     <LinearLayout

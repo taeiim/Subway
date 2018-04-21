@@ -14,7 +14,7 @@ import com.example.parktaeim.subway.Fragment.StoreFragment;
 import com.example.parktaeim.subway.R;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static AHBottomNavigation bottomTabLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setTabLayout() {
-        AHBottomNavigation bottomTabLayout = (AHBottomNavigation) findViewById(R.id.main_tabLayout);
+        bottomTabLayout = (AHBottomNavigation) findViewById(R.id.main_tabLayout);
 
         AHBottomNavigationItem item1 = new AHBottomNavigationItem("꿀조합", R.drawable.ic_menu);
         AHBottomNavigationItem item2 = new AHBottomNavigationItem("메뉴", R.drawable.ic_menu);
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         bottomTabLayout.setInactiveColor(Color.parseColor("#c4c4c4"));
         bottomTabLayout.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
         bottomTabLayout.setCurrentItem(0);
+        bottomTabLayout.setTitleTextSizeInSp(12,11);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HoneyFragment()).commit();
         bottomTabLayout.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {

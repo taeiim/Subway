@@ -169,7 +169,7 @@
                                 android:id="@+id/storeDialog_findRoadBtn"
                                 android:layout_width="60dp"
                                 android:layout_height="22dp"
-                                android:background="@drawable/store_address_spinner"
+                                android:background="@drawable/solid_yellow"
                                 android:layout_alignParentRight="true"
                                 android:text="길찾기"
                                 android:textSize="11dp"
