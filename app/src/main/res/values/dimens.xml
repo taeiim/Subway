@@ -4,5 +4,7 @@
     <dimen name="honeyrank_cardview_height">105dp</dimen>
     <dimen name="store_spinner_height">28dp</dimen>
 
+    <dimen name="menuDetail_ingredientTitle_tvSize">13dp</dimen>
+
     <dimen name="bottom_navigation_icon">20dp</dimen>
 </resources>
