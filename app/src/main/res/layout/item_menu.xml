@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="230dp"
+    android:layout_height="200dp"
     android:layout_margin="5dp">
 
     <android.support.v7.widget.CardView
@@ -35,10 +35,9 @@
                 <ImageView
                     android:id="@+id/menu_imgView"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/ic_burger"
-                    android:padding="16dp"/>
+                    android:padding="12dp"/>
 
                 <TextView
                     android:id="@+id/menu_nameTv"
@@ -47,7 +46,8 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="2dp"
                     android:text="비엘티"
-                    android:textColor="#000" />
+                    android:textColor="#000"
+                    android:textSize="14dp"/>
 
                 <TextView
                     android:id="@+id/menu_priceTv"
@@ -57,7 +57,8 @@
                     android:layout_marginBottom="4dp"
                     android:text="4800원"
                     android:textColor="#000"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="14dp"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"

@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
     private void setTabLayout() {
         bottomTabLayout = (AHBottomNavigation) findViewById(R.id.main_tabLayout);
 
-        AHBottomNavigationItem item1 = new AHBottomNavigationItem("꿀조합", R.drawable.ic_menu);
+        AHBottomNavigationItem item1 = new AHBottomNavigationItem("꿀조합", R.drawable.ic_honey);
         AHBottomNavigationItem item2 = new AHBottomNavigationItem("메뉴", R.drawable.ic_menu);
         AHBottomNavigationItem item3 = new AHBottomNavigationItem("매장찾기", R.drawable.ic_store);
-        AHBottomNavigationItem item4 = new AHBottomNavigationItem("이벤트", R.drawable.ic_menu);
-        AHBottomNavigationItem item5 = new AHBottomNavigationItem("마이페이지", R.drawable.ic_menu);
+        AHBottomNavigationItem item4 = new AHBottomNavigationItem("이벤트", R.drawable.ic_event);
+        AHBottomNavigationItem item5 = new AHBottomNavigationItem("마이페이지", R.drawable.ic_mypage);
 
         bottomTabLayout.addItem(item1);
         bottomTabLayout.addItem(item2);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         bottomTabLayout.setInactiveColor(Color.parseColor("#c4c4c4"));
         bottomTabLayout.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
         bottomTabLayout.setCurrentItem(0);
-        bottomTabLayout.setTitleTextSizeInSp(12,11);
+        bottomTabLayout.setTitleTextSizeInSp(9,8);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HoneyFragment()).commit();
         bottomTabLayout.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {

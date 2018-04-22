@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.example.parktaeim.subway.Adapter.StoreAdapter;
@@ -77,6 +78,7 @@ public class StoreNameFragment extends Fragment {
                 storeDetailDialog.setArguments(args);
                 storeDetailDialog.show(fragmentManager,"store_info");
 
+//                storeDetailDialog.getActivity().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
             }
 
             @Override
@@ -85,6 +87,7 @@ public class StoreNameFragment extends Fragment {
             }
         }));
     }
+
 
     @Override
     public void onResume() {

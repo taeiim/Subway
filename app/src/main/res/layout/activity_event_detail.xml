@@ -21,7 +21,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="이벤트"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="15dp"/>
 
             <ImageView
                 android:id="@+id/eventDetail_backIcon"

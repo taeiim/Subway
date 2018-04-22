@@ -124,10 +124,12 @@ public class StoreNearFragment extends Fragment {
             };
 
     private void onKeyboardShown() {
-        bottomTabLayout.setVisibility(View.GONE);
+        bottomTabLayout.hideBottomNavigation(true);
+
     }
 
     private void onKeyboardHidden() {
-        bottomTabLayout.setVisibility(View.VISIBLE);
+        bottomTabLayout.restoreBottomNavigation();
+
     }
 }
