@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
@@ -12,13 +14,18 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ToggleButton;
 
+import com.example.parktaeim.subway.Adapter.MenuDetailStuffAdapter;
+import com.example.parktaeim.subway.Model.MenuStuffItem;
 import com.example.parktaeim.subway.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by parktaeim on 2018. 4. 22..
  */
 
 public class MenuDetailActivity extends AppCompatActivity {
+    private ArrayList<MenuStuffItem> menuStuffItemArrayList = new ArrayList<>();
     private ToggleButton heartBtn;
     private ImageView backIcon;
 
@@ -37,6 +44,25 @@ public class MenuDetailActivity extends AppCompatActivity {
         String menuPrice = getIntent.getExtras().getString("menuPrice");
 
         Log.d("MenuName=="+menuName,"  / MenuPrice=="+menuPrice);
+
+        setUpStuffRecyclerView();
+
+    }
+
+    private void setUpStuffRecyclerView() {
+        RecyclerView stuffRecyclerView = (RecyclerView) findViewById(R.id.menuDetail_stuffRecyclerView);
+        RecyclerView.LayoutManager stuffLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
+        stuffRecyclerView.setLayoutManager(stuffLayoutManager);
+
+        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
+        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
+        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
+        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
+        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
+        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
+
+        MenuDetailStuffAdapter stuffAdapter = new MenuDetailStuffAdapter(menuStuffItemArrayList);
+        stuffRecyclerView.setAdapter(stuffAdapter);
     }
 
     private void setUpHeartAnimation() {

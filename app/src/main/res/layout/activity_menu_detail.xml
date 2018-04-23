@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite">
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,407 +54,61 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:background="#E6E6E6" />
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:id="@+id/menuDetail_menuInfoLayout"
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingBottom="28dp"
-                android:paddingLeft="36dp"
-                android:paddingRight="36dp"
-                android:paddingTop="24dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/menuDetail_menuImgView"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_marginBottom="24dp"
-                    android:src="@drawable/ic_menu_salad" />
-
-                <TextView
-                    android:id="@+id/menuDetail_menuNameTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/menuDetail_menuImgView"
-                    android:layout_marginBottom="8dp"
-                    android:text="이탈리안 비엠티"
-                    android:textColor="#000"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/menuDetail_menuPriceTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/menuDetail_menuImgView"
-                    android:layout_marginBottom="8dp"
-                    android:text="4900원"
-                    android:textColor="#E64C3C"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
-
-                <TextView
-                    android:id="@+id/menuDetail_menuInfoTv"
+                <RelativeLayout
+                    android:id="@+id/menuDetail_menuInfoLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/menuDetail_menuNameTv"
-                    android:text="7시간 숙성된 페퍼로니, 살라미 그리고 햄이 만들어내는 조화!
+                    android:orientation="vertical"
+                    android:paddingBottom="28dp"
+                    android:paddingLeft="36dp"
+                    android:paddingRight="36dp"
+                    android:paddingTop="24dp">
+
+                    <ImageView
+                        android:id="@+id/menuDetail_menuImgView"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/img_subway" />
+
+                    <TextView
+                        android:id="@+id/menuDetail_menuNameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/menuDetail_menuImgView"
+                        android:layout_marginBottom="8dp"
+                        android:text="이탈리안 비엠티"
+                        android:textColor="#000"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/menuDetail_menuInfoTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/menuDetail_menuNameTv"
+                        android:text="7시간 숙성된 페퍼로니, 살라미 그리고 햄이 만들어내는 조화!
 전세계가 사랑하는 No.1 베스트셀러! Biggest Meatiest Tastiest, It's B.M.T.!  블라블라블라블라"
-                    android:textColor="#777474"
-                    android:textSize="12dp" />
-            </RelativeLayout>
-
-
-            <LinearLayout
-                android:id="@+id/menuDetail_priceLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="7dp"
-                    android:background="#F4F3F3" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/menuDetail_menuImgView"
-                    android:layout_marginBottom="7dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="7dp"
-                    android:text="가격"
-                    android:textColor="#000"
-                    android:textSize="12dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="#C8C8C8" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="24dp"
-                    android:paddingRight="24dp"
-                    android:paddingTop="16dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingBottom="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="15cm"
-                            android:textColor="#000"
-                            android:textSize="16dp" />
-
-                        <TextView
-                            android:id="@+id/menuDetail_menuPriceTv15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:text="4900원"
-                            android:textColor="#E64C3C"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="30cm"
-                            android:textColor="#000"
-                            android:textSize="16dp" />
-
-                        <TextView
-                            android:id="@+id/menuDetail_menuPriceTv30"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:text="8700원"
-                            android:textColor="#E64C3C"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/menuDetail_stuffLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="7dp"
-                    android:background="#F4F3F3" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="7dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="7dp"
-                    android:text="기본재료"
-                    android:textColor="#000"
-                    android:textSize="12dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="#C8C8C8" />
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/menuDetail_stuffRecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:padding="8dp" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/menuDetail_ingredientLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="7dp"
-                    android:background="#F4F3F3" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="7dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="7dp"
-                    android:text="영양성분"
-                    android:textColor="#000"
-                    android:textSize="12dp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="#C8C8C8" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:orientation="vertical"
-                    android:paddingBottom="16dp"
-                    android:paddingLeft="24dp"
-                    android:paddingRight="24dp"
-                    android:paddingTop="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp">
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingRight="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="열량"
-                                android:textColor="#000"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="180kcal"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingLeft="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="중량"
-                                android:textColor="#000"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="301g"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-                        </RelativeLayout>
-
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="#C8C8C8" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginTop="8dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp">
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingRight="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="당류"
-                                android:textColor="#000"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="12g"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingLeft="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="단백질"
-                                android:textColor="#000"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="21g"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="#C8C8C8" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginTop="8dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp">
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingRight="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="포화지방"
-                                android:textColor="#000"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="7g"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingLeft="16dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="나트륨"
-                                android:textColor="#000"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:text="1000mg"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="#C8C8C8" />
-
-                </LinearLayout>
+                        android:textColor="#777474"
+                        android:textSize="12dp" />
+                </RelativeLayout>
 
 
                 <LinearLayout
-                    android:id="@+id/menuDetail_reviewLayout"
+                    android:id="@+id/menuDetail_priceLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -463,45 +118,107 @@
                         android:layout_height="7dp"
                         android:background="#F4F3F3" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="7dp"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginTop="7dp"
-                            android:text="후기"
-                            android:textColor="#000"
-                            android:textSize="12dp" />
-
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_arrow_right"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="12dp"
-                            android:tint="#ff808080"/>
-                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/menuDetail_menuImgView"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="7dp"
+                        android:text="가격"
+                        android:textColor="#000"
+                        android:textSize="12dp" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:layout_alignParentBottom="true"
                         android:background="#C8C8C8" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"></LinearLayout>
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="36dp"
+                        android:paddingRight="36dp"
+                        android:paddingTop="16dp">
 
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:id="@+id/tv15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15cm"
+                                android:textColor="#000"
+                                android:textSize="16dp" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:src="@drawable/dotted_line_gray_price"
+                                android:layout_toRightOf="@+id/tv15"
+                                android:layout_toLeftOf="@+id/menuDetail_menuPriceTv15"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="16dp"
+                                android:layerType="software"
+                                android:layout_centerVertical="true"/>
+
+                            <TextView
+                                android:id="@+id/menuDetail_menuPriceTv15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="4900원"
+                                android:textColor="#E64C3C"
+                                android:textSize="16dp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv30"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="30cm"
+                                android:textColor="#000"
+                                android:textSize="16dp" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:src="@drawable/dotted_line_gray_price"
+                                android:layout_toRightOf="@+id/tv30"
+                                android:layout_toLeftOf="@+id/menuDetail_menuPriceTv30"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="16dp"
+                                android:layerType="software"
+                                android:layout_centerVertical="true"/>
+
+                            <TextView
+                                android:id="@+id/menuDetail_menuPriceTv30"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="8700원"
+                                android:textColor="#E64C3C"
+                                android:textSize="16dp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
 
                 <LinearLayout
-                    android:id="@+id/menuDetail_honeyLayout"
+                    android:id="@+id/menuDetail_stuffLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -511,29 +228,15 @@
                         android:layout_height="7dp"
                         android:background="#F4F3F3" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="7dp"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginTop="7dp"
-                            android:text="관련 꿀조합"
-                            android:textColor="#000"
-                            android:textSize="12dp" />
-
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ic_arrow_right"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="12dp"
-                            android:tint="#ff808080"/>
-                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="7dp"
+                        android:text="기본재료"
+                        android:textColor="#000"
+                        android:textSize="12dp" />
 
                     <View
                         android:layout_width="match_parent"
@@ -541,15 +244,342 @@
                         android:layout_alignParentBottom="true"
                         android:background="#C8C8C8" />
 
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/menuDetail_stuffRecyclerView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="105dp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/menuDetail_ingredientLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="7dp"
+                        android:background="#F4F3F3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="7dp"
+                        android:text="영양성분"
+                        android:textColor="#000"
+                        android:textSize="12dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#C8C8C8" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"></LinearLayout>
+                        android:layout_height="130dp"
+                        android:orientation="vertical"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="24dp"
+                        android:paddingTop="16dp">
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingRight="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="열량"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="180kcal"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingLeft="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="중량"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="301g"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#C8C8C8" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingRight="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="당류"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="12g"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingLeft="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="단백질"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="21g"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#C8C8C8" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingRight="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="포화지방"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="7g"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingLeft="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="나트륨"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="1000mg"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="@dimen/menuDetail_ingredientTitle_tvSize" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#C8C8C8" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/menuDetail_reviewLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="7dp"
+                            android:background="#F4F3F3" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="7dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="7dp"
+                                android:text="후기"
+                                android:textColor="#000"
+                                android:textSize="12dp" />
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="12dp"
+                                android:src="@drawable/ic_arrow_right"
+                                android:tint="#ff808080" />
+
+                            <TextView
+                                android:id="@+id/menuDetail_menuPriceTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginBottom="702dp"
+                                android:text="4900원"
+                                android:textColor="#E64C3C"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="#C8C8C8" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"></LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/menuDetail_honeyLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="7dp"
+                            android:background="#F4F3F3" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="7dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="7dp"
+                                android:text="관련 꿀조합"
+                                android:textColor="#000"
+                                android:textSize="12dp" />
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="12dp"
+                                android:src="@drawable/ic_arrow_right"
+                                android:tint="#ff808080" />
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="#C8C8C8" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"></LinearLayout>
+
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
 
-        </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
-</ScrollView>
+</LinearLayout>

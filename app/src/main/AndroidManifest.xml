@@ -23,7 +23,9 @@
         <activity android:name=".Activity.HoneyReviewActivity">
 
         </activity>
-        <activity android:name=".Activity.MenuDetailActivity"/>
+        <activity android:name=".Activity.MenuDetailActivity">
+
+        </activity>
 
     </application>
 
