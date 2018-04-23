@@ -23,6 +23,8 @@
         <activity android:name=".Activity.HoneyReviewActivity">
 
         </activity>
+        <activity android:name=".Activity.MenuDetailActivity"/>
+
     </application>
 
 </manifest>

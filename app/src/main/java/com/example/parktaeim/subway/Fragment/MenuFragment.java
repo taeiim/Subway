@@ -1,5 +1,6 @@
 package com.example.parktaeim.subway.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,9 +15,12 @@ import android.view.animation.ScaleAnimation;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
+import com.example.parktaeim.subway.Activity.EventDetailActivity;
+import com.example.parktaeim.subway.Activity.MenuDetailActivity;
 import com.example.parktaeim.subway.Adapter.MenuAdapter;
 import com.example.parktaeim.subway.Model.MenuItem;
 import com.example.parktaeim.subway.R;
+import com.example.parktaeim.subway.RecyclerViewClickListener;
 
 import java.util.ArrayList;
 

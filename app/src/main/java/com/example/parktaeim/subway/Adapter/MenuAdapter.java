@@ -1,5 +1,8 @@
 package com.example.parktaeim.subway.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +16,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.example.parktaeim.subway.Activity.MenuDetailActivity;
 import com.example.parktaeim.subway.Model.MenuItem;
 import com.example.parktaeim.subway.R;
 
@@ -25,6 +29,7 @@ import java.util.ArrayList;
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
     private ArrayList<MenuItem> menuItemArrayList = new ArrayList<>();
     private ScaleAnimation scaleAnimation;
+    private Context context;
 
     public MenuAdapter(ArrayList<MenuItem> menuItemArrayList) {
         this.menuItemArrayList = menuItemArrayList;
@@ -39,21 +44,31 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(MenuAdapter.ViewHolder holder, int position) {
+        context = holder.itemView.getContext();
+
         holder.nameTv.setText(menuItemArrayList.get(position).getName());
         holder.priceTv.setText(menuItemArrayList.get(position).getPrice());
         float starValue = menuItemArrayList.get(position).getStar();
         holder.starTv.setText(String.valueOf(starValue));
         holder.ratingBar.setRating(starValue);
 
+        // Setting HeartBtn Animation
         setUpHeartAnimation();
         holder.heartBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                //animation
                 compoundButton.startAnimation(scaleAnimation);
             }
-
         });
+
+        // Intent MenuDetailActivity
+        holder.menuCardView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, MenuDetailActivity.class);
+            intent.putExtra("menuName", menuItemArrayList.get(position).getName());
+            intent.putExtra("menuPrice", menuItemArrayList.get(position).getPrice());
+            context.startActivity(intent);
+        });
+
     }
 
     private void setUpHeartAnimation() {
@@ -61,8 +76,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         scaleAnimation.setDuration(500);
         BounceInterpolator bounceInterpolator = new BounceInterpolator();
         scaleAnimation.setInterpolator(bounceInterpolator);
-
-
     }
 
     @Override
@@ -77,6 +90,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         RatingBar ratingBar;
         ImageView menuImgView;
         ToggleButton heartBtn;
+        CardView menuCardView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -86,6 +100,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
             ratingBar = itemView.findViewById(R.id.menu_ratingBar);
             menuImgView = itemView.findViewById(R.id.menu_imgView);
             heartBtn = itemView.findViewById(R.id.menu_heartBtn);
+            menuCardView = itemView.findViewById(R.id.menu_cardView);
         }
     }
 }
