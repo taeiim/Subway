@@ -10,11 +10,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.MainActivity"
             android:windowSoftInputMode="adjustResize" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.HoneyRankActivity">
 
@@ -23,12 +19,16 @@
         <activity android:name=".Activity.HoneyReviewActivity">
 
         </activity>
-        <activity android:name=".Activity.MenuDetailActivity">
+        <activity android:name=".Activity.MenuDetailActivity"/>
+        <activity android:name=".Activity.HoneyAllActivity"/>
+        <activity android:name=".Activity.HoneyDetailActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".Activity.HoneyAllActivity">
 
-        </activity>
 
     </application>
 

@@ -49,7 +49,6 @@ public class HoneyAllAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((ViewHolderGrid)holder).starTv.setText(String.valueOf(currentItem.getStarNum()));
             ((ViewHolderGrid)holder).starPeoCntTv.setText(String.valueOf(currentItem.getStarPeoCnt()));
             ((ViewHolderGrid)holder).heartCntTv.setText(String.valueOf(currentItem.getHeartCnt()));
-            ((ViewHolderGrid)holder).starRatingBar.setRating(currentItem.getStarNum());
 
         } else {
             ((ViewHolderLinear)holder).honeyNameTv.setText(currentItem.getHoneyName());
@@ -74,7 +73,6 @@ public class HoneyAllAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         TextView starTv;
         TextView starPeoCntTv;
         TextView heartCntTv;
-        RatingBar starRatingBar;
         ToggleButton heartBtn;
         ImageView honeyImgView;
 
@@ -86,7 +84,6 @@ public class HoneyAllAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             starTv = (TextView) itemView.findViewById(R.id.allmenuGrid_starTv);
             starPeoCntTv = (TextView) itemView.findViewById(R.id.allmenuGrid_starPeoCntTv);
             heartCntTv = (TextView) itemView.findViewById(R.id.allmenuGrid_heartCnt);
-            starRatingBar = (RatingBar) itemView.findViewById(R.id.allmenuGrid_ratingBar);
             heartBtn = (ToggleButton) itemView.findViewById(R.id.allmenuGrid_heartBtn);
             honeyImgView = (ImageView) itemView.findViewById(R.id.allmenuGrid_imgView);
         }

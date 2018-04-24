@@ -22,7 +22,7 @@
                 android:layout_centerInParent="true"
                 android:text="이벤트"
                 android:textColor="#000000"
-                android:textSize="15dp"/>
+                android:textSize="@dimen/toolbar_textSize"/>
 
             <ImageView
                 android:id="@+id/eventDetail_backIcon"

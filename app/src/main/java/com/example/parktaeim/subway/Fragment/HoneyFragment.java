@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.parktaeim.subway.Activity.HoneyAllActivity;
+import com.example.parktaeim.subway.Activity.HoneyRankActivity;
 import com.example.parktaeim.subway.Adapter.BannerPagerAdapter;
 import com.example.parktaeim.subway.R;
 
@@ -36,6 +37,8 @@ public class HoneyFragment extends android.support.v4.app.Fragment {
         LinearLayout honeyAllIntentLayout = (LinearLayout) rootView.findViewById(R.id.allHoneyIntentLayout);
         honeyAllIntentLayout.setOnClickListener(v-> startActivity(new Intent(getContext(), HoneyAllActivity.class)));
 
+        LinearLayout honeyRankIntentLayout = (LinearLayout) rootView.findViewById(R.id.rankHoneyIntentLayout);
+        honeyRankIntentLayout.setOnClickListener(v-> startActivity(new Intent(getContext(), HoneyRankActivity.class)));
         return rootView;
     }
 

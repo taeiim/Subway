@@ -35,7 +35,7 @@
                     android:layout_centerInParent="true"
                     android:text="메뉴 정보"
                     android:textColor="#000000"
-                    android:textSize="16dp" />
+                    android:textSize="@dimen/toolbar_textSize" />
 
                 <ToggleButton
                     android:id="@+id/menuDetail_heartBtn"

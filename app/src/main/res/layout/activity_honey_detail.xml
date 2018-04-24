@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/honeyDetail_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/honeyDetail_backIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="꿀조합 정보"
+                android:textColor="#000000"
+                android:textSize="@dimen/toolbar_textSize" />
+
+            <ToggleButton
+                android:id="@+id/honeyDetail_heartBtn"
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="16dp"
+                android:background="@drawable/button_heart"
+                android:checked="false"
+                android:text=""
+                android:textOff=""
+                android:textOn="" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:descendantFocusability="beforeDescendants">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+            </LinearLayout>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/honeyDetail_tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tabIndicatorColor="@color/colorPrimary"
+                app:tabSelectedTextColor="#000"
+                app:tabTextColor="#8C8C8C"
+                app:tabIndicatorHeight="3dp"
+                app:tabTextAppearance="@style/TabTextSmall"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/honeyDetail_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

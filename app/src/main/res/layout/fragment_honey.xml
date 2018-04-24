@@ -32,7 +32,8 @@
         <LinearLayout
             android:id="@+id/allHoneyIntentLayout"
             android:layout_width="match_parent"
-            android:layout_height="30dp">
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -43,5 +44,22 @@
                 />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rankHoneyIntentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="꿀조합 랭킹"
+                android:textColor="#000"
+                android:textSize="17dp"
+                />
+
+        </LinearLayout>v
+
     </LinearLayout>
 </ScrollView>

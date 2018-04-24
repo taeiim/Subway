@@ -38,6 +38,9 @@ public class HoneyAllActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_honey_all);
 
+        ImageView backIcon = (ImageView) findViewById(R.id.honeyAll_backIcon);
+        backIcon.setOnClickListener(v->finish());
+
         setUpRecyclerView();
         setUpSpinner();
     }
@@ -87,7 +90,6 @@ public class HoneyAllActivity extends AppCompatActivity {
                 changeRecycleIcon.setImageResource(R.drawable.ic_linear_recycle);
             }
         });
-
 
     }
 }
