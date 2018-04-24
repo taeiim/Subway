@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.parktaeim.subway.Adapter.StoreAdapter;
-import com.example.parktaeim.subway.Adapter.StoreSpinnerAdapter;
+import com.example.parktaeim.subway.Adapter.SpinnerAdapter;
 import com.example.parktaeim.subway.Model.StoreItem;
 import com.example.parktaeim.subway.R;
 import com.example.parktaeim.subway.RecyclerViewClickListener;
@@ -65,9 +65,9 @@ public class StoreAddressFragment extends Fragment {
         Spinner spinner2 = (Spinner) rootView.findViewById(R.id.store_spinner2);
         Spinner spinner3 = (Spinner) rootView.findViewById(R.id.store_spinner3);
 
-        StoreSpinnerAdapter spinnerAdapter1 = new StoreSpinnerAdapter(getContext(),spinnerData1);
-        StoreSpinnerAdapter spinnerAdapter2 = new StoreSpinnerAdapter(getContext(),spinnerData2);
-        StoreSpinnerAdapter spinnerAdapter3 = new StoreSpinnerAdapter(getContext(),spinnerData3);
+        SpinnerAdapter spinnerAdapter1 = new SpinnerAdapter(getContext(),spinnerData1);
+        SpinnerAdapter spinnerAdapter2 = new SpinnerAdapter(getContext(),spinnerData2);
+        SpinnerAdapter spinnerAdapter3 = new SpinnerAdapter(getContext(),spinnerData3);
 
         spinner1.setAdapter(spinnerAdapter1);
         spinner2.setAdapter(spinnerAdapter2);

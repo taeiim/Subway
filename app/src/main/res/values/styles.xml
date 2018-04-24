@@ -11,9 +11,5 @@
     <style name="TabTextSmall" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">13dp</item>
     </style>
-    
-    <style name="SpinnerYellow" parent="@style/Widget.AppCompat.Spinner">
-        <item name="android:background">@drawable/store_address_spinner</item>
-    </style>
 
 </resources>

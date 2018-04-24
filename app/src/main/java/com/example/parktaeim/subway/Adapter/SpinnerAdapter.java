@@ -15,13 +15,13 @@ import java.util.ArrayList;
  * Created by parktaeim on 2018. 4. 21..
  */
 
-public class StoreSpinnerAdapter extends BaseAdapter {
+public class SpinnerAdapter extends BaseAdapter {
     Context context;
     ArrayList<String> spinnerData;
     LayoutInflater inflater;
 
 
-    public StoreSpinnerAdapter(Context context, ArrayList<String> spinnerData){
+    public SpinnerAdapter(Context context, ArrayList<String> spinnerData){
         this.context = context;
         this.spinnerData = spinnerData;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -37,7 +37,7 @@ public class StoreSpinnerAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView==null) {
-            convertView = inflater.inflate(R.layout.spinner_store_normal, parent, false);
+            convertView = inflater.inflate(R.layout.spinner_normal, parent, false);
         }
 
         if(spinnerData !=null){
@@ -52,7 +52,7 @@ public class StoreSpinnerAdapter extends BaseAdapter {
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         if(convertView==null){
-            convertView = inflater.inflate(R.layout.spinner_store_dropdown, parent, false);
+            convertView = inflater.inflate(R.layout.spinner_dropdown, parent, false);
         }
 
         //데이터세팅

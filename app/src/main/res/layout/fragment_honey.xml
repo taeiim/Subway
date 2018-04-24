@@ -30,14 +30,17 @@
 
 
         <LinearLayout
+            android:id="@+id/allHoneyIntentLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="30dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전체 꿀조합"
+                android:textColor="#000"
+                android:textSize="17dp"
+                />
 
         </LinearLayout>
     </LinearLayout>
