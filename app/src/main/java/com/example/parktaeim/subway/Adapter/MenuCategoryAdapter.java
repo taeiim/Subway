@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.parktaeim.subway.Fragment.MenuFragment;
 import com.example.parktaeim.subway.Model.MenuCategoryItem;
 import com.example.parktaeim.subway.R;
 
@@ -38,17 +39,7 @@ public class MenuCategoryAdapter extends RecyclerView.Adapter<MenuCategoryAdapte
     public void onBindViewHolder(MenuCategoryAdapter.ViewHolder holder, int position) {
         holder.categoryTitleTv.setText(menuCategoryItemArrayList.get(position).getCategoryTitle());
         holder.categoryImgView.setImageResource(menuCategoryItemArrayList.get(position).getCategoryImgView());
-
-//        holder.categoryEdge.setVisibility(View.GONE);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                categoryGone(holder);
-                holder.categoryEdge.setVisibility(View.VISIBLE);
-                holder.categoryTitleTv.setTextColor(Color.rgb(2,149,69));
-
-            }
-        });
+        if(position==0) holder.categoryEdge.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -74,4 +65,5 @@ public class MenuCategoryAdapter extends RecyclerView.Adapter<MenuCategoryAdapte
         holder.categoryEdge.setVisibility(View.GONE);
 
     }
+
 }

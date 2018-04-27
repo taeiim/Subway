@@ -1,5 +1,6 @@
 package com.example.parktaeim.subway.Fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -10,14 +11,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 import com.example.parktaeim.subway.Adapter.MenuAdapter;
 import com.example.parktaeim.subway.Adapter.MenuCategoryAdapter;
 import com.example.parktaeim.subway.Model.MenuCategoryItem;
 import com.example.parktaeim.subway.Model.MenuItem;
 import com.example.parktaeim.subway.R;
+import com.example.parktaeim.subway.RecyclerViewClickListener;
 
 import java.util.ArrayList;
 
@@ -45,6 +49,7 @@ public class MenuFragment extends Fragment {
     private TabLayout.Tab tab7;
     TabLayout categoryTablayout;
 
+    private int currentCategory=0;
 
     @Nullable
     @Override
@@ -88,14 +93,65 @@ public class MenuFragment extends Fragment {
             categoryTablayout.addTab(tabs[i]);
         }
 
-        String[] sandwichTabs = {"전체", "신제품","프로모션","클래식","프레쉬&라이트","프리미엄","아침메뉴"};
-        String[] saladTabs = {"전체", "신제품","프로모션","아침메뉴"};
+        setUpTabText(0,tabs);
+        // 1 Category RecyclerView Click Color Setting
+        categoryRecyclerView.addOnItemTouchListener(new RecyclerViewClickListener(getContext(), categoryRecyclerView, new RecyclerViewClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                setTabLayoutEdge(position);
+            }
 
-        setUpTabText(saladTabs,tabs);
+            @Override
+            public void onLongItemClick(View view, int position) {
 
+            }
+        }));
     }
 
-    private void setUpTabText( String[] tabTexts, TabLayout.Tab[] tabs) {
+    public void setTabLayoutEdge(int currentCategory){
+        TabLayout.Tab[] tabs= {tab1, tab2, tab3, tab4, tab5, tab6, tab7};
+
+        for(int i=0; i<=5; i++){
+            categoryRecyclerView.getChildAt(i).findViewById(R.id.menuCategory_titleEdge).setVisibility(View.GONE);
+            TextView titleTv = categoryRecyclerView.getChildAt(i).findViewById(R.id.menuCategory_titleTv);
+            titleTv.setTextColor(Color.rgb(170,170,170));
+        }
+        categoryRecyclerView.getChildAt(currentCategory).findViewById(R.id.menuCategory_titleEdge).setVisibility(View.VISIBLE);
+        TextView titleTv = categoryRecyclerView.getChildAt(currentCategory).findViewById(R.id.menuCategory_titleTv);
+        titleTv.setTextColor(Color.rgb(2,149,69));
+        setUpTabText(currentCategory,tabs);
+    }
+
+    private void setUpTabText( int currentCategory, TabLayout.Tab[] tabs) {
+        String[] sandwichTabs = {"전체", "신제품","프로모션","클래식","프레쉬&라이트","프리미엄","아침메뉴"};
+        String[] saladTabs = {"전체", "신제품","클래식","프레쉬&라이트","프리미엄"};
+        String[] drinkTabs = {"전체","사이드메뉴","음료"};
+        String[] groupTabs = {"전체","샌드위치","쿠키"};
+        String[] stuffTabs = {"전체","빵","채소","치즈","소스"};
+        categoryTablayout.setVisibility(View.VISIBLE);
+
+        String[] tabTexts = sandwichTabs;
+        switch (currentCategory){
+            case 0:
+                tabTexts = sandwichTabs;
+                break;
+            case 1:
+                tabTexts = saladTabs;
+                break;
+            case 2:
+                categoryTablayout.setVisibility(View.GONE);
+                break;
+            case 3:
+                tabTexts = drinkTabs;
+                break;
+            case 4:
+                tabTexts = groupTabs;
+                break;
+            case 5:
+                tabTexts = stuffTabs;
+                break;
+        }
+
         int maxTabSize = 7;
         int tabCnt = tabTexts.length;
         int emptyTabCnt = maxTabSize - tabCnt;
