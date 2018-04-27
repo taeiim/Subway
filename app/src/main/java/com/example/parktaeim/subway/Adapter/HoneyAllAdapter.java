@@ -1,5 +1,7 @@
 package com.example.parktaeim.subway.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.example.parktaeim.subway.Activity.HoneyDetailActivity;
 import com.example.parktaeim.subway.Model.HoneyAllItem;
 import com.example.parktaeim.subway.R;
 
@@ -21,10 +24,12 @@ import java.util.ArrayList;
 public class HoneyAllAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private ArrayList<HoneyAllItem> honeyAllItemArrayList = new ArrayList<>();
     private int recyclerViewType;
+    private Context context;
 
-    public HoneyAllAdapter(ArrayList<HoneyAllItem> honeyAllItemArrayList, int recyclerViewType) {
+    public HoneyAllAdapter(ArrayList<HoneyAllItem> honeyAllItemArrayList, int recyclerViewType , Context context) {
         this.honeyAllItemArrayList = honeyAllItemArrayList;
         this.recyclerViewType = recyclerViewType;
+        this.context = context;
     }
 
     @Override
@@ -59,6 +64,8 @@ public class HoneyAllAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((ViewHolderLinear)holder).heartCntTv.setText(String.valueOf(currentItem.getHeartCnt()));
             ((ViewHolderLinear)holder).starRatingBar.setRating(currentItem.getStarNum());
         }
+
+        holder.itemView.setOnClickListener(v -> context.startActivity(new Intent(context, HoneyDetailActivity.class)));
     }
 
     @Override

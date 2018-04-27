@@ -36,7 +36,6 @@ public class MenuDetailActivity extends AppCompatActivity {
         setUpHeartAnimation();
 
         backIcon = (ImageView) findViewById(R.id.menuDetail_backIcon);
-
         backIcon.setOnClickListener(v->finish());
 
         Intent getIntent = getIntent();

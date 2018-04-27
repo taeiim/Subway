@@ -70,8 +70,8 @@ public class HoneyAllActivity extends AppCompatActivity {
             honeyAllItemArrayList.add(new HoneyAllItem("에그참치마요","4900원","에그 스크램블 + 핫소스+ 칠리 +후추 +토마토 + 베이컨 + 옥수수콘 ",4.0f,4,32,"dlsfkj"));
         }
 
-        gridAdapter = new HoneyAllAdapter(honeyAllItemArrayList,1);
-        linearAdapter = new HoneyAllAdapter(honeyAllItemArrayList,2);
+        gridAdapter = new HoneyAllAdapter(honeyAllItemArrayList,1,this);
+        linearAdapter = new HoneyAllAdapter(honeyAllItemArrayList,2,this);
         recyclerViewGrid.setAdapter(gridAdapter);
         recyclerViewLinear.setAdapter(linearAdapter);
 

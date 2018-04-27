@@ -16,6 +16,7 @@ import android.widget.ToggleButton;
 
 import com.example.parktaeim.subway.Model.HoneyRankItem;
 import com.example.parktaeim.subway.R;
+import com.example.parktaeim.subway.SubwayAnimation;
 
 import java.util.ArrayList;
 
@@ -26,7 +27,6 @@ import java.util.ArrayList;
 public class HoneyRankAdapter extends RecyclerView.Adapter<HoneyRankAdapter.ViewHolder> {
 
     private ArrayList<HoneyRankItem> honeyRankItemArrayList = new ArrayList<>();
-    private ScaleAnimation scaleAnimation;
 
     public HoneyRankAdapter(ArrayList<HoneyRankItem> honeyRankItemArrayList) {
         this.honeyRankItemArrayList = honeyRankItemArrayList;
@@ -48,24 +48,15 @@ public class HoneyRankAdapter extends RecyclerView.Adapter<HoneyRankAdapter.View
         holder.starPeoCntTv.setText(String.valueOf(honeyRankItemArrayList.get(position).getStarPeoCnt()));
         holder.heartTv.setText(String.valueOf(honeyRankItemArrayList.get(position).getHeartCnt()));
 
-        setUpHeartAnimation();
+        SubwayAnimation subwayAnimation = new SubwayAnimation();
         holder.heartBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 //animation
-                compoundButton.startAnimation(scaleAnimation);
+                compoundButton.startAnimation(subwayAnimation.setHearBtnAnimation());
             }
 
         });
-    }
-
-    private void setUpHeartAnimation() {
-        scaleAnimation = new ScaleAnimation(0.7f, 1.0f, 0.7f, 1.0f, Animation.RELATIVE_TO_SELF, 0.7f, Animation.RELATIVE_TO_SELF, 0.7f);
-        scaleAnimation.setDuration(500);
-        BounceInterpolator bounceInterpolator = new BounceInterpolator();
-        scaleAnimation.setInterpolator(bounceInterpolator);
-
-
     }
 
     @Override

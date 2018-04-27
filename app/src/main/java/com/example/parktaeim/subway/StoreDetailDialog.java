@@ -56,7 +56,6 @@ public class StoreDetailDialog extends android.support.v4.app.DialogFragment {
     private void setDialog() {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-
         Bundle getArgs = getArguments();
         String tellNum = getArgs.getString("tellNum");
         String openingTime = getArgs.getString("openingTime");

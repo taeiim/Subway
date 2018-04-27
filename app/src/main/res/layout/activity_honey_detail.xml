@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/colorWhite">
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/honeyDetail_toolbar"
@@ -51,9 +51,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
         android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:descendantFocusability="beforeDescendants">
+        android:focusableInTouchMode="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,24 +62,154 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
 
+                <ImageView
+                    android:id="@+id/honeyDetail_imgView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_subway_full" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="36dp"
+                    android:paddingRight="36dp"
+                    android:paddingTop="24dp">
+
+                    <TextView
+                        android:id="@+id/honeyDetail_honeyNameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="에그참치마요"
+                        android:textColor="#000"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/honeyDetail_honeyPriceTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="4900원"
+                        android:textColor="@color/colorTextDarkPink"
+                        android:textSize="17dp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/top_bottom_line"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/writerLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/honeyDetail_writerImgView"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/img_subway_full" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@id/honeyDetail_writerImgView"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:id="@+id/honeyDetail_writerNameTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/honeyDetail_writerImgView"
+                                    android:paddingBottom="2dp"
+                                    android:text="태임태임"
+                                    android:textColor="#000"
+                                    android:textSize="14dp" />
+
+                                <TextView
+                                    android:id="@+id/honeyDetail_postDateTv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/honeyDetail_writerImgView"
+                                    android:text="2018.04.23."
+                                    android:textColor="#766D6D"
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/honeyDetail_writerShowLayout"
+                                android:layout_width="50dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true">
+
+                                <ImageView
+                                    android:id="@+id/honeyDetail_writerShowIcon"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:src="@drawable/ic_down_arrow"
+                                    android:tint="@color/colorPrimaryDark"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"/>
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/honeyDetail_writerSayingTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/writerLayout"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="12dp"
+                            android:paddingRight="4dp"
+                            android:text="제 인생 조합입니다 하하하하하하하하하하하하한이ㅏ린아러이나러이나ㅓㄹ이ㅏㄴ러ㅣ아너리아너리아너링나ㅓ리아널"
+                            android:textColor="#4B4646"
+                            android:textSize="14dp"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="#F4F3F3" />
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/honeyDetail_tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 app:tabIndicatorColor="@color/colorPrimary"
-                app:tabSelectedTextColor="#000"
-                app:tabTextColor="#8C8C8C"
                 app:tabIndicatorHeight="3dp"
-                app:tabTextAppearance="@style/TabTextSmall"/>
+                app:tabSelectedTextColor="#000"
+                app:tabTextAppearance="@style/TabTextSmall"
+                app:tabTextColor="#8C8C8C" />
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/honeyDetail_viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="1000dp"/>
+                android:layout_height="1000dp" />
 
         </LinearLayout>
     </ScrollView>

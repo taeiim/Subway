@@ -19,6 +19,7 @@ import android.widget.ToggleButton;
 import com.example.parktaeim.subway.Activity.MenuDetailActivity;
 import com.example.parktaeim.subway.Model.MenuItem;
 import com.example.parktaeim.subway.R;
+import com.example.parktaeim.subway.SubwayAnimation;
 
 import java.util.ArrayList;
 
@@ -30,6 +31,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
     private ArrayList<MenuItem> menuItemArrayList = new ArrayList<>();
     private ScaleAnimation scaleAnimation;
     private Context context;
+    SubwayAnimation subwayAnimation = new SubwayAnimation();
 
     public MenuAdapter(ArrayList<MenuItem> menuItemArrayList) {
         this.menuItemArrayList = menuItemArrayList;
@@ -52,12 +54,10 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         holder.starTv.setText(String.valueOf(starValue));
         holder.ratingBar.setRating(starValue);
 
-        // Setting HeartBtn Animation
-        setUpHeartAnimation();
         holder.heartBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                compoundButton.startAnimation(scaleAnimation);
+                compoundButton.startAnimation(subwayAnimation.setHearBtnAnimation());
             }
         });
 
@@ -71,12 +71,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
 
     }
 
-    private void setUpHeartAnimation() {
-        scaleAnimation = new ScaleAnimation(0.7f, 1.0f, 0.7f, 1.0f, Animation.RELATIVE_TO_SELF, 0.7f, Animation.RELATIVE_TO_SELF, 0.7f);
-        scaleAnimation.setDuration(500);
-        BounceInterpolator bounceInterpolator = new BounceInterpolator();
-        scaleAnimation.setInterpolator(bounceInterpolator);
-    }
 
     @Override
     public int getItemCount() {
