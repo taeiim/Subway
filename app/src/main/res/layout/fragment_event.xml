@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <info.hoang8f.android.segmented.SegmentedGroup
-        android:id="@+id/segmented2"
+        android:id="@+id/event_segmentedGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="10dp"
-        app:sc_border_width="2dp"
-        app:sc_corner_radius="10dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        app:sc_tint_color="#32B238"
-        app:sc_checked_text_color="@color/colorWhite"
+        android:background="@color/colorWhite"
         android:checkedButton="@id/button1"
-        android:background="@color/colorWhite">
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:sc_border_width="2dp"
+        app:sc_checked_text_color="@color/colorWhite"
+        app:sc_corner_radius="10dp"
+        app:sc_tint_color="#32B238">
 
         <RadioButton
             android:id="@+id/button1"
+            style="@style/RadioButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="진행중인 이벤트"
             android:textSize="12dp"
-            android:layout_weight="1"
-            style="@style/RadioButton"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/button2"
+            style="@style/RadioButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="종료된 이벤트"
             android:textSize="12dp"
-            style="@style/RadioButton"
-            android:layout_weight="1"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </info.hoang8f.android.segmented.SegmentedGroup>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/event_recyclerView"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/eventViewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="8dp"/>
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+
 
 </LinearLayout>

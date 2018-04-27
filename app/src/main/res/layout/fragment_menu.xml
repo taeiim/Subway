@@ -1,48 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/menu_category_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:background="@color/colorWhite"
-        android:clipToPadding="false"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#E6E6E6"/>
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/menu_category_tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/colorWhite"
-        app:tabMode="fixed"
-        app:tabIndicatorHeight="0dp"
-        app:tabTextColor="#8C8C8C"
-        app:tabSelectedTextColor="@color/colorAccent"
-        app:tabTextAppearance="@style/TabTextVerySmall"
-        app:tabGravity="fill"
-        app:tabPaddingStart="-1dp"
-        app:tabPaddingEnd="-1dp"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#E6E6E6"/>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/menu_recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp"
-        android:clipToPadding="false"/>
+        android:orientation="vertical">
 
-</LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/menu_category_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:clipToPadding="false"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E6E6E6" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/menu_category_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/colorWhite"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="fixed"
+            app:tabPaddingEnd="-1dp"
+            app:tabPaddingStart="-1dp"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabTextAppearance="@style/TabTextVerySmall"
+            app:tabTextColor="#8C8C8C" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E6E6E6" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/menu_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="8dp" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
