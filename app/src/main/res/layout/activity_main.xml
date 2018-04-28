@@ -6,40 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.parktaeim.subway.Activity.MainActivity">
 
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/main_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbar_height"
-        app:contentInsetStart="0dp"
-        android:background="@color/colorWhite">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="25dp"
-                android:src="@drawable/logo_subway"
-                android:layout_centerInParent="true"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#E6E6E6"
-                android:layout_alignParentBottom="true"/>
-        </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
-
     <LinearLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/main_tabLayout"
-        android:layout_below="@+id/main_toolbar"
         android:orientation="vertical"></LinearLayout>
-
 
     <View
         android:layout_width="match_parent"

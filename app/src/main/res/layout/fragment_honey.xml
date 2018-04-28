@@ -1,65 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/honey_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/colorWhite"
+        app:contentInsetStart="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="match_parent">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/honey_banner_viewPager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo_subway" />
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/honey_banner_tabLayout"
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:tabGravity="center"
-                app:tabIndicatorHeight="0dp"
+                android:layout_height="1dp"
                 android:layout_alignParentBottom="true"
-                app:tabBackground="@drawable/banner_tab_selector"/>
+                android:background="#E6E6E6" />
         </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/allHoneyIntentLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="40dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/honey_banner_viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/honey_banner_tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    app:tabBackground="@drawable/banner_tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/allHoneyIntentLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="전체 꿀조합"
-                android:textColor="#000"
-                android:textSize="17dp"
-                />
+                android:paddingBottom="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전체 꿀조합"
+                    android:textColor="#000"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rankHoneyIntentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="꿀조합 랭킹"
+                    android:textColor="#000"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/rankHoneyIntentLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="40dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="꿀조합 랭킹"
-                android:textColor="#000"
-                android:textSize="17dp"
-                />
-
-        </LinearLayout>v
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>
