@@ -17,7 +17,7 @@ import com.example.parktaeim.subway.Adapter.StoreAdapter;
 import com.example.parktaeim.subway.Model.StoreItem;
 import com.example.parktaeim.subway.R;
 import com.example.parktaeim.subway.RecyclerViewClickListener;
-import com.example.parktaeim.subway.StoreDetailDialog;
+import com.example.parktaeim.subway.Dialog.StoreDetailDialog;
 
 import java.util.ArrayList;
 

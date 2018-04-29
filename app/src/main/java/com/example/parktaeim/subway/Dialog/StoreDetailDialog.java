@@ -1,4 +1,4 @@
-package com.example.parktaeim.subway;
+package com.example.parktaeim.subway.Dialog;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,6 +15,8 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.parktaeim.subway.R;
 
 /**
  * Created by parktaeim on 2018. 4. 19..
