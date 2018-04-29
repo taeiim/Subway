@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -160,13 +160,13 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="2dp"
-                                android:src="@drawable/dotted_line_gray_price"
-                                android:layout_toRightOf="@+id/tv15"
-                                android:layout_toLeftOf="@+id/menuDetail_menuPriceTv15"
+                                android:layout_centerVertical="true"
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginRight="16dp"
+                                android:layout_toLeftOf="@+id/menuDetail_menuPriceTv15"
+                                android:layout_toRightOf="@+id/tv15"
                                 android:layerType="software"
-                                android:layout_centerVertical="true"/>
+                                android:src="@drawable/dotted_line_gray_price" />
 
                             <TextView
                                 android:id="@+id/menuDetail_menuPriceTv15"
@@ -195,13 +195,13 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="2dp"
-                                android:src="@drawable/dotted_line_gray_price"
-                                android:layout_toRightOf="@+id/tv30"
-                                android:layout_toLeftOf="@+id/menuDetail_menuPriceTv30"
+                                android:layout_centerVertical="true"
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginRight="16dp"
+                                android:layout_toLeftOf="@+id/menuDetail_menuPriceTv30"
+                                android:layout_toRightOf="@+id/tv30"
                                 android:layerType="software"
-                                android:layout_centerVertical="true"/>
+                                android:src="@drawable/dotted_line_gray_price" />
 
                             <TextView
                                 android:id="@+id/menuDetail_menuPriceTv30"
@@ -248,7 +248,7 @@
                         android:id="@+id/menuDetail_stuffRecyclerView"
                         android:layout_width="wrap_content"
                         android:layout_height="105dp"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center" />
 
                 </LinearLayout>
 
@@ -582,4 +582,16 @@
         </ScrollView>
 
     </LinearLayout>
-</LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/menuDetail_reviewFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_edit_pencil"
+        app:fabSize="normal"/>
+
+</RelativeLayout>

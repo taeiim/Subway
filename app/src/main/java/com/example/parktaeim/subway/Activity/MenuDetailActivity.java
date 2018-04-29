@@ -3,6 +3,7 @@ package com.example.parktaeim.subway.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -28,15 +29,14 @@ public class MenuDetailActivity extends AppCompatActivity {
     private ArrayList<MenuStuffItem> menuStuffItemArrayList = new ArrayList<>();
     private ToggleButton heartBtn;
     private ImageView backIcon;
+    private FloatingActionButton reviewFab;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_detail);
-        setUpHeartAnimation();
 
-        backIcon = (ImageView) findViewById(R.id.menuDetail_backIcon);
-        backIcon.setOnClickListener(v->finish());
+        setUpHeartAnimation();
 
         Intent getIntent = getIntent();
         String menuName = getIntent.getExtras().getString("menuName");
@@ -45,6 +45,19 @@ public class MenuDetailActivity extends AppCompatActivity {
         Log.d("MenuName=="+menuName,"  / MenuPrice=="+menuPrice);
 
         setUpStuffRecyclerView();
+
+
+        backIcon = (ImageView) findViewById(R.id.menuDetail_backIcon);
+        reviewFab = (FloatingActionButton) findViewById(R.id.menuDetail_reviewFab);
+        backIcon.setOnClickListener(v->finish());
+        reviewFab.setOnClickListener(v->{
+            Intent intent = new Intent(this,ReviewActivity.class);
+            intent.putExtra("reviewType","menu");
+            intent.putExtra("name",0);
+            startActivity(intent);
+        });
+
+
 
     }
 

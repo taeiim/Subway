@@ -20,7 +20,7 @@
 
         </activity>
         <activity android:name=".Activity.EventDetailActivity"/>
-        <activity android:name=".Activity.HoneyReviewActivity">
+        <activity android:name=".Activity.ReviewActivity">
 
         </activity>
         <activity android:name=".Activity.MenuDetailActivity"/>
