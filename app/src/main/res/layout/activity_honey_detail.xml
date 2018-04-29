@@ -66,12 +66,24 @@
                 android:orientation="vertical"
                 android:paddingBottom="16dp">
 
-                <ImageView
-                    android:id="@+id/honeyDetail_imgView"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/img_subway_full" />
+                    android:layout_height="200dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/honeyDetail_banner_viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/honeyDetail_banner_tabLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        app:tabBackground="@drawable/banner_tab_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp" />
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"

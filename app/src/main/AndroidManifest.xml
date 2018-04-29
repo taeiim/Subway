@@ -20,14 +20,13 @@
 
         </activity>
         <activity android:name=".Activity.EventDetailActivity"/>
-        <activity android:name=".Activity.ReviewActivity">
-
-        </activity>
+        <activity android:name=".Activity.ReviewActivity" />
         <activity android:name=".Activity.MenuDetailActivity"/>
         <activity android:name=".Activity.HoneyAllActivity"/>
         <activity android:name=".Activity.HoneyDetailActivity"/>
         <activity android:name=".Activity.SettingsActivity"/>
         <activity android:name=".Activity.AboutDevelperActivity"/>
+        <activity android:name=".Activity.LoginActivity" />
 
     </application>
 

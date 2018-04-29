@@ -1,8 +1,10 @@
 package com.example.parktaeim.subway.Activity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -13,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.example.parktaeim.subway.Adapter.BannerPagerAdapter;
 import com.example.parktaeim.subway.Adapter.FragmentViewPagerAdapter;
 import com.example.parktaeim.subway.Fragment.HoneyDetailInfoFragment;
 import com.example.parktaeim.subway.Fragment.HoneyDetailReviewFragment;
@@ -21,6 +24,8 @@ import com.example.parktaeim.subway.Fragment.StoreNameFragment;
 import com.example.parktaeim.subway.Fragment.StoreNearFragment;
 import com.example.parktaeim.subway.R;
 import com.example.parktaeim.subway.SubwayAnimation;
+
+import java.util.ArrayList;
 
 /**
  * Created by parktaeim on 2018. 4. 24..
@@ -39,6 +44,7 @@ public class HoneyDetailActivity extends AppCompatActivity {
 
         setUpTabLayout();
         setUpWriterSayingShow();
+        setUpImageViewPager();
 
         ToggleButton heartBtn = (ToggleButton) findViewById(R.id.honeyDetail_heartBtn);
         SubwayAnimation subwayAnimation = new SubwayAnimation();
@@ -49,6 +55,21 @@ public class HoneyDetailActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setUpImageViewPager() {
+        ArrayList<Drawable> bannerImgArrayList = new ArrayList<>();
+        bannerImgArrayList.add(ContextCompat.getDrawable(this,R.drawable.img_subway_full));
+        bannerImgArrayList.add(ContextCompat.getDrawable(this,R.drawable.img_subway_full));
+        bannerImgArrayList.add(ContextCompat.getDrawable(this,R.drawable.img_subway));
+        bannerImgArrayList.add(ContextCompat.getDrawable(this,R.drawable.img_banner1));
+
+        BannerPagerAdapter adapter = new BannerPagerAdapter(this,bannerImgArrayList);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.honeyDetail_banner_viewPager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.honeyDetail_banner_tabLayout);
+
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager,true);
     }
 
     private void setUpWriterSayingShow() {
