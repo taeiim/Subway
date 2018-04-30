@@ -7,6 +7,7 @@
     <dimen name="settings_list_height">55dp</dimen>
 
     <dimen name="review_progressbar_cntTv_width">25dp</dimen>
+    <dimen name="review_profile_width">40dp</dimen>
 
     <dimen name="menuDetail_ingredientTitle_tvSize">13dp</dimen>
     <dimen name="toolbar_textSize">15dp</dimen>

@@ -39,7 +39,7 @@ public class HoneyAllActivity extends AppCompatActivity {
         setContentView(R.layout.activity_honey_all);
 
         ImageView backIcon = (ImageView) findViewById(R.id.honeyAll_backIcon);
-        backIcon.setOnClickListener(v->finish());
+        backIcon.setOnClickListener(v -> finish());
 
         setUpRecyclerView();
         setUpSpinner();
@@ -48,42 +48,45 @@ public class HoneyAllActivity extends AppCompatActivity {
     private void setUpSpinner() {
         Spinner spinner = (Spinner) findViewById(R.id.honeyAll_spinner);
         ArrayList<String> spinnerData = new ArrayList<>();
-        spinnerData.add("최신순"); spinnerData.add("인기순"); spinnerData.add("별점순"); spinnerData.add("후기많은순");
+        spinnerData.add("최신순");
+        spinnerData.add("인기순");
+        spinnerData.add("별점순");
+        spinnerData.add("후기많은순");
 
-        SpinnerAdapter spinnerAdapter = new SpinnerAdapter(getApplicationContext(),spinnerData);
+        SpinnerAdapter spinnerAdapter = new SpinnerAdapter(getApplicationContext(), spinnerData);
         spinner.setAdapter(spinnerAdapter);
     }
 
     private void setUpRecyclerView() {
         recyclerViewGrid = (RecyclerView) findViewById(R.id.menuAll_recyclerViewGrid);
         recyclerViewLinear = (RecyclerView) findViewById(R.id.menuAll_recyclerViewLinear);
-        gridLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
+        gridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         gridLayoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
         linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerViewGrid.setLayoutManager(gridLayoutManager);
         recyclerViewLinear.setLayoutManager(linearLayoutManager);
         recyclerViewGrid.setHasFixedSize(true);
 
-        for(int i=0;i<11;i++){
-            honeyAllItemArrayList.add(new HoneyAllItem("에그참치마요","4900원","에그 스크램블 + 핫소스+ 칠리 +후추 +토마토 + 베이컨 + 옥수수콘 + 슈레드치즈..",4.0f,4,32,"dlsfkj"));
-            honeyAllItemArrayList.add(new HoneyAllItem("에그참치마요","4900원","에그 스크램+ 슈레드치즈..",4.0f,4,32,"dlsfkj"));
-            honeyAllItemArrayList.add(new HoneyAllItem("에그참치마요","4900원","에그 스크램블 + 핫소스+ 칠리 +후추 +토마토 + 베이컨 + 옥수수콘 ",4.0f,4,32,"dlsfkj"));
+        for (int i = 0; i < 11; i++) {
+            honeyAllItemArrayList.add(new HoneyAllItem("에그참치마요", "4900원", "에그 스크램블 + 핫소스+ 칠리 +후추 +토마토 + 베이컨 + 옥수수콘 + 슈레드치즈..", 4.0f, 4, 32, "dlsfkj"));
+            honeyAllItemArrayList.add(new HoneyAllItem("에그참치마요", "4900원", "에그 스크램+ 슈레드치즈..", 4.0f, 4, 32, "dlsfkj"));
+            honeyAllItemArrayList.add(new HoneyAllItem("에그참치마요", "4900원", "에그 스크램블 + 핫소스+ 칠리 +후추 +토마토 + 베이컨 + 옥수수콘 ", 4.0f, 4, 32, "dlsfkj"));
         }
 
-        gridAdapter = new HoneyAllAdapter(honeyAllItemArrayList,1,this);
-        linearAdapter = new HoneyAllAdapter(honeyAllItemArrayList,2,this);
+        gridAdapter = new HoneyAllAdapter(honeyAllItemArrayList, 1, this);
+        linearAdapter = new HoneyAllAdapter(honeyAllItemArrayList, 2, this);
         recyclerViewGrid.setAdapter(gridAdapter);
         recyclerViewLinear.setAdapter(linearAdapter);
 
 
         changeRecycleIcon = (ImageView) findViewById(R.id.honeyAll_recyclerChangeIcon);
-        changeRecycleIcon.setOnClickListener(v->{
-            if(isGrid){
+        changeRecycleIcon.setOnClickListener(v -> {
+            if (isGrid) {
                 recyclerViewGrid.setVisibility(View.GONE);
                 recyclerViewLinear.setVisibility(View.VISIBLE);
                 isGrid = false;
                 changeRecycleIcon.setImageResource(R.drawable.ic_grid_recycle);
-            } else{
+            } else {
                 recyclerViewGrid.setVisibility(View.VISIBLE);
                 recyclerViewLinear.setVisibility(View.GONE);
                 isGrid = true;

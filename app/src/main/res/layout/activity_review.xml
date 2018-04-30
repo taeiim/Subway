@@ -41,7 +41,7 @@
         android:layout_height="1dp"
         android:background="#E6E6E6" />
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -53,7 +53,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="110dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:focusableInTouchMode="true">
 
                 <LinearLayout
                     android:layout_width="120dp"
@@ -74,7 +75,7 @@
                         style="?android:attr/ratingBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:isIndicator="false"
+                        android:isIndicator="true"
                         android:max="5"
                         android:numStars="5"
                         android:progressTint="@color/colorPrimary"
@@ -373,5 +374,5 @@
                 android:layout_height="match_parent" />
 
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

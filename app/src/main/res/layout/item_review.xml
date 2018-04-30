@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/review_writerProfile"
+            android:layout_width="@dimen/review_profile_width"
+            android:layout_height="@dimen/review_profile_width"
+            android:src="@drawable/img_subway_full" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp">
+
+            <LinearLayout
+                android:id="@+id/writerInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_toLeftOf="@id/review_heartBtnLayout"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/review_writerNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="태임태임"
+                    android:textColor="#000"
+                    android:textSize="12dp" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="1dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@color/lightlightGray" />
+
+                <TextView
+                    android:id="@+id/review_writeDateTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2018.04.12"
+                    android:textColor="@color/lightGray"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <RatingBar
+                android:id="@+id/review_ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/writerInfoLayout"
+                android:isIndicator="true"
+                android:max="5"
+                android:numStars="5"
+                android:progressTint="@color/colorPrimary"
+                android:rating="4.0"
+                android:secondaryProgressTint="@color/colorPrimary" />
+
+            <LinearLayout
+                android:id="@+id/review_heartBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ToggleButton
+                    android:id="@+id/review_heartBtn"
+                    android:layout_width="13dp"
+                    android:layout_height="14dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/button_heart"
+                    android:checked="false"
+                    android:text=""
+                    android:textOff=""
+                    android:textOn="" />
+
+                <TextView
+                    android:id="@+id/review_heartCntTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="29"
+                    android:textColor="@color/lightGray"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/review_reviewTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/review_ratingBar"
+                android:layout_marginTop="8dp"
+                android:text="안녕하세요 가나다라마바사아자차카타파하 고노도로모보소오조초코토포호"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/review_imgRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@+id/review_reviewTv"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#C8C8C8" />
+</LinearLayout>
