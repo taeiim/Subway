@@ -1,54 +1,58 @@
 package com.example.parktaeim.subway.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
-import android.widget.RatingBar;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.parktaeim.subway.R;
 
 /**
- * Created by parktaeim on 2018. 4. 20..
+ * Created by parktaeim on 2018. 4. 29..
  */
 
 public class ReviewActivity extends AppCompatActivity {
-    private RatingBar ratingBar;
-    private TextView ratingTv;
-    private TextView toolbarTv;
-    private TextView nameTv;
-    private int reviewType;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
-        nameTv = (TextView) findViewById(R.id.review_menuNameTv);
-        toolbarTv = (TextView) findViewById(R.id.review_toolbarTitleTv);
+        ImageView backIcon = (ImageView) findViewById(R.id.review_backIcon);
+        backIcon.setOnClickListener(v->finish());
 
-        Intent getIntent = getIntent();
-        int reviewType = getIntent.getExtras().getInt("reviewType");
-        switch (reviewType) {
-            case 0:
-                toolbarTv.setText("메뉴 리뷰 작성");
-                break;
-            case 1:
-                toolbarTv.setText("꿀조합 리뷰 작성");
-                break;
+        setUpProgressBar();
+    }
+
+    private void setUpProgressBar() {
+        int[] reviewCnt = {107,42,2,0,16}; // star 5,4,3,2,1
+
+        ProgressBar score5progressBar = (ProgressBar) findViewById(R.id.score5progressBar);
+        ProgressBar score4progressBar = (ProgressBar) findViewById(R.id.score4progressBar);
+        ProgressBar score3progressBar = (ProgressBar) findViewById(R.id.score3progressBar);
+        ProgressBar score2progressBar = (ProgressBar) findViewById(R.id.score2progressBar);
+        ProgressBar score1progressBar = (ProgressBar) findViewById(R.id.score1progressBar);
+
+        TextView star5cntTv = (TextView) findViewById(R.id.star5cntTv);
+        TextView star4cntTv = (TextView) findViewById(R.id.star4cntTv);
+        TextView star3cntTv = (TextView) findViewById(R.id.star3cntTv);
+        TextView star2cntTv = (TextView) findViewById(R.id.star2cntTv);
+        TextView star1cntTv = (TextView) findViewById(R.id.star1cntTv);
+
+        ProgressBar[] progressBars = {score5progressBar,score4progressBar,score3progressBar,score2progressBar,score1progressBar};
+        TextView[] starCntTvs = {star5cntTv,star4cntTv,star3cntTv,star2cntTv,star1cntTv};
+
+        int max = 0;
+        for(int i=0; i<5 ;i++){
+            if(reviewCnt[i] > max)  max = reviewCnt[i];
         }
 
-        // Setting RatingBar
-        ratingBar = (RatingBar) findViewById(R.id.review_ratingBar);
-        ratingTv = (TextView) findViewById(R.id.review_ratingTv);
-        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                ratingTv.setText(String.valueOf(rating));
-            }
-        });
-
+        for(int i=0; i<5; i++){
+            progressBars[i].setMax(max);
+            progressBars[i].setProgress(reviewCnt[i]);
+            starCntTvs[i].setText(String.valueOf(reviewCnt[i]));
+        }
     }
 }

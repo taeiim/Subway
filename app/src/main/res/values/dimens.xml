@@ -6,14 +6,20 @@
     <dimen name="mypage_toolbar_height">40dp</dimen>
     <dimen name="settings_list_height">55dp</dimen>
 
+    <dimen name="review_progressbar_cntTv_width">25dp</dimen>
+
     <dimen name="menuDetail_ingredientTitle_tvSize">13dp</dimen>
     <dimen name="toolbar_textSize">15dp</dimen>
     <dimen name="mypage_num_textSize">18dp</dimen>
     <dimen name="mypage_numTitle_textSize">14dp</dimen>
     <dimen name="settings_title_textSize">16dp</dimen>
+    <dimen name="review_progressbar_textSize">12dp</dimen>
+    <dimen name="review_progressbar_cntTextSize">12dp</dimen>
 
     <dimen name="settings_list_margin">24dp</dimen>
     <dimen name="settings_list_arrow_margin">16dp</dimen>
+    <dimen name="review_progressbar_margin">8dp</dimen>
 
     <dimen name="bottom_navigation_icon">20dp</dimen>
+
 </resources>

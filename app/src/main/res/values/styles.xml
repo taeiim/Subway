@@ -15,4 +15,5 @@
     <style name="TabTextVerySmall" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">11dp</item>
     </style>
+
 </resources>

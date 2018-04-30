@@ -6,4 +6,6 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="darkGray">#424141</color>
     <color name="colorTextDarkPink">#E64C3C</color>
+    <color name="lightGray">#898989</color>
+    <color name="progressBackGray">#DEDEDE</color>
 </resources>

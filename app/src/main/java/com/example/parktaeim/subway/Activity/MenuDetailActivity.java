@@ -13,6 +13,7 @@ import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.ToggleButton;
 
 import com.example.parktaeim.subway.Adapter.MenuDetailStuffAdapter;
@@ -46,12 +47,14 @@ public class MenuDetailActivity extends AppCompatActivity {
 
         setUpStuffRecyclerView();
 
+        RelativeLayout reviewLayout = (RelativeLayout) findViewById(R.id.menuDetail_reviewLayout);
+        reviewLayout.setOnClickListener(v->startActivity(new Intent(this,ReviewActivity.class)));
 
         backIcon = (ImageView) findViewById(R.id.menuDetail_backIcon);
         reviewFab = (FloatingActionButton) findViewById(R.id.menuDetail_reviewFab);
         backIcon.setOnClickListener(v->finish());
         reviewFab.setOnClickListener(v->{
-            Intent intent = new Intent(this,ReviewActivity.class);
+            Intent intent = new Intent(this,ReviewWriteActivity.class);
             intent.putExtra("reviewType","menu");
             intent.putExtra("name",0);
             startActivity(intent);

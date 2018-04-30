@@ -7,7 +7,6 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/honeyRank_toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
         app:contentInsetStart="0dp">
@@ -19,7 +18,7 @@
             <ImageView
                 android:id="@+id/review_backIcon"
                 android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="16dp"
                 android:src="@drawable/ic_back" />
@@ -29,21 +28,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="리뷰 작성"
+                android:text="메뉴 리뷰"
                 android:textColor="#000000"
                 android:textSize="@dimen/toolbar_textSize" />
 
-            <TextView
-                android:id="@+id/review_enrollBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="16dp"
-                android:text="등록"
-                android:textColor="@color/colorAccent"
-                android:textSize="14dp"
-                android:textStyle="bold" />
 
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
@@ -60,146 +48,330 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:focusableInTouchMode="true"
-            android:focusable="true">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <ImageView
-                    android:id="@+id/review_menuImgView"
-                    android:layout_width="160dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@color/colorAccent"/>
-
-                <TextView
-                    android:id="@+id/review_menuNameTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"
-                    android:text="샌드위치 이름"
-                    android:textColor="#000000"
-                    android:textSize="15dp" />
-            </LinearLayout>
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#E6E6E6" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="24dp"
-                android:orientation="vertical">
+                android:layout_height="110dp"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="24dp"
-                        android:text="별점"
-                        android:textColor="#000" />
+                        android:layout_marginBottom="2dp"
+                        android:text="4.5"
+                        android:textColor="#000"
+                        android:textSize="26dp" />
 
                     <RatingBar
-                        android:id="@+id/review_ratingBar"
-                        style="?android:attr/ratingBarStyleIndicator"
+                        android:id="@+id/review_all_ratingBar"
+                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:isIndicator="false"
                         android:max="5"
                         android:numStars="5"
-                        android:progressTint="#FAC917"
-                        android:rating="4.2"
-                        android:secondaryProgressTint="#DCDCDC"
+                        android:progressTint="@color/colorPrimary"
+                        android:rating="4.5"
+                        android:secondaryProgressTint="@color/colorPrimary"
                         android:stepSize="0.5" />
-
-                    <TextView
-                        android:id="@+id/review_ratingTv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:text="4.0"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
-
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_marginTop="16dp"
-                    android:text="리뷰 작성"
-                    android:textColor="#000" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#dedede" />
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/review_reviewEditTv"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/solid_gray"
-                        android:gravity="left|top"
-                        android:hint="솔직한 리뷰를 남겨주세요"
-                        android:minHeight="120dp"
-                        android:paddingBottom="28dp"
-                        android:paddingTop="16dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        android:textSize="15dp"/>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="8dp"
-                        android:paddingBottom="8dp">
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
 
                         <TextView
-                            android:id="@+id/review_textCntTv"
+                            android:id="@+id/score5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textStyle="bold"/>
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:text="5점"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_textSize" />
+
+                        <ProgressBar
+                            android:id="@+id/score5progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:layout_toLeftOf="@id/star5cntTv"
+                            android:layout_toRightOf="@id/score5"
+                            android:progressBackgroundTint="@color/progressBackGray"
+                            android:progressTint="@color/colorPrimary"
+                            android:scaleY="2" />
 
                         <TextView
+                            android:id="@+id/star5cntTv"
+                            android:layout_width="@dimen/review_progressbar_cntTv_width"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:gravity="left"
+                            android:text="10"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_cntTextSize" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/score4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" / 1000"
-                            android:textColor="@color/colorPrimaryDark"/>
-                    </LinearLayout>
-                </RelativeLayout>
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:text="4점"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_textSize" />
+
+                        <ProgressBar
+                            android:id="@+id/score4progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:layout_toLeftOf="@id/star4cntTv"
+                            android:layout_toRightOf="@id/score4"
+                            android:progressBackgroundTint="@color/progressBackGray"
+                            android:progressTint="@color/colorPrimary"
+                            android:scaleY="2" />
+
+                        <TextView
+                            android:id="@+id/star4cntTv"
+                            android:layout_width="@dimen/review_progressbar_cntTv_width"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:gravity="left"
+                            android:text="10"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_cntTextSize" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/score3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:text="3점"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_textSize" />
+
+                        <ProgressBar
+                            android:id="@+id/score3progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:layout_toLeftOf="@id/star3cntTv"
+                            android:layout_toRightOf="@id/score3"
+                            android:progressBackgroundTint="@color/progressBackGray"
+                            android:progressTint="@color/colorPrimary"
+                            android:scaleY="2" />
+
+                        <TextView
+                            android:id="@+id/star3cntTv"
+                            android:layout_width="@dimen/review_progressbar_cntTv_width"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="10"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_cntTextSize" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/score2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:text="2점"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_textSize" />
+
+                        <ProgressBar
+                            android:id="@+id/score2progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:layout_toLeftOf="@id/star2cntTv"
+                            android:layout_toRightOf="@id/score2"
+                            android:progressBackgroundTint="@color/progressBackGray"
+                            android:progressTint="@color/colorPrimary"
+                            android:scaleY="2" />
+
+                        <TextView
+                            android:id="@+id/star2cntTv"
+                            android:layout_width="@dimen/review_progressbar_cntTv_width"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:gravity="left"
+                            android:text="10"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_cntTextSize" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/score1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:text="1점"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_textSize" />
+
+                        <ProgressBar
+                            android:id="@+id/score1progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/review_progressbar_margin"
+                            android:layout_toLeftOf="@+id/star1cntTv"
+                            android:layout_toRightOf="@id/score1"
+                            android:progressBackgroundTint="@color/progressBackGray"
+                            android:progressTint="@color/colorPrimary"
+                            android:scaleY="2" />
+
+                        <TextView
+                            android:id="@+id/star1cntTv"
+                            android:layout_width="@dimen/review_progressbar_cntTv_width"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="10"
+                            android:textColor="@color/lightGray"
+                            android:textSize="@dimen/review_progressbar_cntTextSize" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="#F4F3F3" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:text="총 "
+                    android:textColor="#000"
+                    android:textSize="11dp" />
+
+                <TextView
+                    android:id="@+id/review_allCntTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/text1"
+                    android:text="22"
+                    android:textColor="#037939"
+                    android:textSize="11dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_marginTop="16dp"
-                    android:text="사진"
-                    android:textColor="#000" />
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/review_allCntTv"
+                    android:text="개"
+                    android:textColor="#000"
+                    android:textSize="11dp" />
 
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/review_goodSortTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/view1"
+                    android:text="좋아요순"
+                    android:textColor="#000"
+                    android:textSize="11dp" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="1dp"
+                    android:layout_height="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@id/review_recentSortTv"
+                    android:background="#dedede" />
+
+                <TextView
+                    android:id="@+id/review_recentSortTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:text="최신순"
+                    android:textColor="#000"
+                    android:textSize="11dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#E6E6E6" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/review_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
