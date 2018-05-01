@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class ReviewWriteActivity extends AppCompatActivity {
 
         Intent getIntent = getIntent();
         int reviewType = getIntent.getExtras().getInt("reviewType");
+        Log.d("reviewType get===",String.valueOf(reviewType));
         switch (reviewType) {
             case 0:
                 toolbarTv.setText("메뉴 리뷰 작성");

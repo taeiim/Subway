@@ -1,6 +1,7 @@
 package com.example.parktaeim.subway.Fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -9,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.parktaeim.subway.Activity.SettingsActivity;
 import com.example.parktaeim.subway.R;
@@ -19,6 +22,12 @@ import com.example.parktaeim.subway.R;
 
 public class MypageFragment extends Fragment {
     private View rootView;
+    private TextView goodNumTv;
+    private TextView goodTitleTv;
+    private TextView reviewTitleTv;
+    private TextView reviewNumTv;
+    private TextView honeyTitleTv;
+    private TextView honeyNumTv;
 
     @Nullable
     @Override
@@ -28,7 +37,47 @@ public class MypageFragment extends Fragment {
         ImageView settingsIcon = (ImageView) rootView.findViewById(R.id.mypage_settingsBtn);
         settingsIcon.setOnClickListener(v->startActivity(new Intent(getContext(), SettingsActivity.class)));
 
+        LinearLayout goodLayout = (LinearLayout) rootView.findViewById(R.id.mypageGoodLayout);
+        LinearLayout reviewLayout = (LinearLayout) rootView.findViewById(R.id.mypageReviewLayout);
+        LinearLayout honeyLayout = (LinearLayout) rootView.findViewById(R.id.mypageHoneyLayout);
+        goodTitleTv = (TextView) rootView.findViewById(R.id.mypageGoodTitleTv);
+        goodNumTv = (TextView) rootView.findViewById(R.id.mypageGoodNumTv);
+        reviewTitleTv = (TextView) rootView.findViewById(R.id.mypageReviewTitleTv);
+        reviewNumTv = (TextView) rootView.findViewById(R.id.mypageReviewNumTv);
+        honeyTitleTv = (TextView) rootView.findViewById(R.id.mypageHoneyTitleTv);
+        honeyNumTv = (TextView) rootView.findViewById(R.id.mypageHoneyNumTv);
+
+        setLayoutTextColor(goodTitleTv, goodNumTv);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeFragment()).commit();
+
+        goodLayout.setOnClickListener(v->{
+            setLayoutTextColor(goodTitleTv, goodNumTv);
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeFragment()).commit();
+        });
+
+        reviewLayout.setOnClickListener(v->{
+            setLayoutTextColor(reviewTitleTv, reviewNumTv);
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeFragment()).commit();
+        });
+
+        honeyLayout.setOnClickListener(v->{
+            setLayoutTextColor(honeyTitleTv, honeyNumTv);
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeRecyclerFragment()).commit();
+        });
+
         return rootView;
     }
 
+    public void setLayoutTextColor(TextView titleTv, TextView numTv){
+        setLayoutTextBlack();
+        titleTv.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        numTv.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+    }
+
+    public void setLayoutTextBlack(){
+        TextView[] textViews = {goodTitleTv, goodNumTv, reviewTitleTv, reviewNumTv, honeyTitleTv, honeyNumTv};
+        for(int i=0; i<textViews.length; i++){
+            textViews[i].setTextColor(Color.BLACK);
+        }
+    }
 }

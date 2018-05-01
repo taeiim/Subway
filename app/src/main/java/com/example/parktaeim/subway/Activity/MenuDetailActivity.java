@@ -55,8 +55,7 @@ public class MenuDetailActivity extends AppCompatActivity {
         backIcon.setOnClickListener(v->finish());
         reviewFab.setOnClickListener(v->{
             Intent intent = new Intent(this,ReviewWriteActivity.class);
-            intent.putExtra("reviewType","menu");
-            intent.putExtra("name",0);
+            intent.putExtra("reviewType",0);
             startActivity(intent);
         });
 

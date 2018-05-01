@@ -112,9 +112,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@color/colorWhite">
 
                 <LinearLayout
+                    android:id="@+id/mypageGoodLayout"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -122,6 +124,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/mypageGoodTitleTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="좋아요"
@@ -129,6 +132,7 @@
                         android:textSize="@dimen/mypage_numTitle_textSize" />
 
                     <TextView
+                        android:id="@+id/mypageGoodNumTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="23"
@@ -143,6 +147,7 @@
                     android:background="#CACACA" />
 
                 <LinearLayout
+                    android:id="@+id/mypageReviewLayout"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -150,6 +155,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/mypageReviewTitleTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="내 리뷰"
@@ -157,6 +163,7 @@
                         android:textSize="@dimen/mypage_numTitle_textSize" />
 
                     <TextView
+                        android:id="@+id/mypageReviewNumTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="23"
@@ -171,6 +178,7 @@
                     android:background="#CACACA" />
 
                 <LinearLayout
+                    android:id="@+id/mypageHoneyLayout"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -178,6 +186,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/mypageHoneyTitleTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="내 꿀조합"
@@ -185,6 +194,7 @@
                         android:textSize="@dimen/mypage_numTitle_textSize" />
 
                     <TextView
+                        android:id="@+id/mypageHoneyNumTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0"
@@ -199,6 +209,15 @@
                 android:layout_height="1dp"
                 android:background="#E6E6E6" />
 
+
+            <LinearLayout
+                android:id="@+id/mypage_fragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
+
+            </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

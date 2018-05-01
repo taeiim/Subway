@@ -1,8 +1,10 @@
 package com.example.parktaeim.subway.Activity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -24,6 +27,7 @@ import com.example.parktaeim.subway.Fragment.StoreNameFragment;
 import com.example.parktaeim.subway.Fragment.StoreNearFragment;
 import com.example.parktaeim.subway.R;
 import com.example.parktaeim.subway.SubwayAnimation;
+import com.example.parktaeim.subway.WrapContentHeightViewPager;
 
 import java.util.ArrayList;
 
@@ -53,6 +57,13 @@ public class HoneyDetailActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 compoundButton.startAnimation(subwayAnimation.setHearBtnAnimation());
             }
+        });
+
+        FloatingActionButton reviewFab = (FloatingActionButton) findViewById(R.id.honeyDetail_reviewFab);
+        reviewFab.setOnClickListener(v->{
+            Intent intent = new Intent(this,ReviewWriteActivity.class);
+            intent.putExtra("reviewType",1);
+            startActivity(intent);
         });
 
     }
