@@ -13,6 +13,12 @@ public class HoneyAllItem {
     private int heartCnt;
     private String honeyImg;
 
+    public HoneyAllItem(String honeyName, String honeyInfo, String honeyImg) {
+        this.honeyName = honeyName;
+        this.honeyInfo = honeyInfo;
+        this.honeyImg = honeyImg;
+    }
+
     public HoneyAllItem(String honeyName, String honeyPrice, String honeyInfo, float starNum, int starPeoCnt, int heartCnt, String honeyImg) {
         this.honeyName = honeyName;
         this.honeyPrice = honeyPrice;

@@ -66,6 +66,8 @@ public class HoneyDetailActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        ImageView backIcon = (ImageView) findViewById(R.id.honeyDetail_backIcon);
+        backIcon.setOnClickListener(v-> finish());
     }
 
     private void setUpImageViewPager() {

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.parktaeim.subway.Activity.ReviewWriteActivity;
 import com.example.parktaeim.subway.Activity.SettingsActivity;
 import com.example.parktaeim.subway.R;
 
@@ -40,6 +42,11 @@ public class MypageFragment extends Fragment {
         LinearLayout goodLayout = (LinearLayout) rootView.findViewById(R.id.mypageGoodLayout);
         LinearLayout reviewLayout = (LinearLayout) rootView.findViewById(R.id.mypageReviewLayout);
         LinearLayout honeyLayout = (LinearLayout) rootView.findViewById(R.id.mypageHoneyLayout);
+
+        LinearLayout goodLayout2 = (LinearLayout) rootView.findViewById(R.id.mypageGoodLayout2);
+        LinearLayout reviewLayout2 = (LinearLayout) rootView.findViewById(R.id.mypageReviewLayout2);
+        LinearLayout honeyLayout2 = (LinearLayout) rootView.findViewById(R.id.mypageHoneyLayout2);
+
         goodTitleTv = (TextView) rootView.findViewById(R.id.mypageGoodTitleTv);
         goodNumTv = (TextView) rootView.findViewById(R.id.mypageGoodNumTv);
         reviewTitleTv = (TextView) rootView.findViewById(R.id.mypageReviewTitleTv);
@@ -47,25 +54,33 @@ public class MypageFragment extends Fragment {
         honeyTitleTv = (TextView) rootView.findViewById(R.id.mypageHoneyTitleTv);
         honeyNumTv = (TextView) rootView.findViewById(R.id.mypageHoneyNumTv);
 
-        setLayoutTextColor(goodTitleTv, goodNumTv);
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeFragment()).commit();
+        setUpFragment(0);
 
-        goodLayout.setOnClickListener(v->{
-            setLayoutTextColor(goodTitleTv, goodNumTv);
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeFragment()).commit();
-        });
-
-        reviewLayout.setOnClickListener(v->{
-            setLayoutTextColor(reviewTitleTv, reviewNumTv);
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeFragment()).commit();
-        });
-
-        honeyLayout.setOnClickListener(v->{
-            setLayoutTextColor(honeyTitleTv, honeyNumTv);
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeRecyclerFragment()).commit();
-        });
+        goodLayout.setOnClickListener(v->setUpFragment(0));
+        reviewLayout.setOnClickListener(v->setUpFragment(1));
+        honeyLayout.setOnClickListener(v->setUpFragment(2));
+        goodLayout2.setOnClickListener(v->setUpFragment(0));
+        reviewLayout2.setOnClickListener(v->setUpFragment(1));
+        honeyLayout2.setOnClickListener(v->setUpFragment(2));
 
         return rootView;
+    }
+
+    public void setUpFragment(int type) {
+        switch (type){
+            case 0:
+                setLayoutTextColor(goodTitleTv, goodNumTv);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeFragment()).commit();
+                break;
+            case 1:
+                setLayoutTextColor(reviewTitleTv, reviewNumTv);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeFragment()).commit();
+                break;
+            case 2:
+                setLayoutTextColor(honeyTitleTv, honeyNumTv);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mypage_fragmentContainer, new MypageServeRecyclerFragment()).commit();
+                break;
+        }
     }
 
     public void setLayoutTextColor(TextView titleTv, TextView numTv){

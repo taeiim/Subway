@@ -34,25 +34,26 @@
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
-    <RelativeLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:background="#FFC000">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="4월 1일 ~ 4월 30일 기준 랭킹"
-            android:layout_alignParentRight="true"
-            android:textSize="11dp"
-            android:textColor="@android:color/white"
-            android:layout_marginRight="8dp"
-            android:layout_centerVertical="true"/>
-    </RelativeLayout>
+            android:orientation="vertical"
+            android:focusableInTouchMode="true">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/honeyRank_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="8dp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:src="@drawable/img_subway_full"
+                android:scaleType="centerCrop"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/honeyRank_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

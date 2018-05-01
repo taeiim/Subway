@@ -44,6 +44,7 @@ public class MypageServeRecyclerFragment extends Fragment {
         recyclerView = (RecyclerView) rootView.findViewById(R.id.mypageServe_recyclerView);
         layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setNestedScrollingEnabled(false);
 
         for (int i = 0; i < 11; i++) {
             honeyAllItemArrayList.add(new HoneyAllItem("에그참치마요", "4900원", "에그 스크램블 + 핫소스+ 칠리 +후추 +토마토 + 베이컨 + 옥수수콘 + 슈레드치즈..", 4.0f, 4, 32, "dlsfkj"));

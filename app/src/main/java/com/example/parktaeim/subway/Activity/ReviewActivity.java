@@ -1,7 +1,9 @@
 package com.example.parktaeim.subway.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,6 +36,13 @@ public class ReviewActivity extends AppCompatActivity {
 
         ImageView backIcon = (ImageView) findViewById(R.id.review_backIcon);
         backIcon.setOnClickListener(v->finish());
+
+        FloatingActionButton reviewFab = (FloatingActionButton) findViewById(R.id.review_reviewFab);
+        reviewFab.setOnClickListener(v->{
+            Intent intent = new Intent(this,ReviewWriteActivity.class);
+            intent.putExtra("reviewType",0);
+            startActivity(intent);
+        });
 
         setUpProgressBar();
         setUpRecyclerView();
