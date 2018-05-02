@@ -102,7 +102,8 @@
                         android:isIndicator="false"
                         android:max="5"
                         android:numStars="5"
-                        android:progressTint="#FAC917"
+                        android:progressTint="@color/colorPrimary"
+                        android:secondaryProgressTint="@color/colorPrimary"
                         android:rating="4"
                         android:stepSize="0.5" />
 
@@ -118,14 +119,35 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/ic_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/allhoneyLinear_starTv"
+                        android:paddingLeft="3dp"
+                        android:text="("
+                        android:textColor="#9b9b9b"
+                        android:textSize="8dp" />
+
+                    <TextView
                         android:id="@+id/allhoneyLinear_starPeoCntTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/allhoneyLinear_starTv"
-                        android:paddingLeft="4dp"
-                        android:text="(28)"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ic_open"
+                        android:text="28"
                         android:textColor="#9b9b9b"
                         android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/allhoneyLinear_starPeoCntTv"
+                        android:text=")"
+                        android:textColor="#9b9b9b"
+                        android:textSize="8dp" />
+
 
                     <TextView
                         android:id="@+id/allhoneyLinear_priceTv"

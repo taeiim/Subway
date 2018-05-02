@@ -19,7 +19,9 @@
             android:id="@+id/event_imgView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.6"/>
+            android:layout_weight="2.6"
+            android:src="@drawable/img_subway_full"
+            android:scaleType="centerCrop"/>
 
         <LinearLayout
             android:layout_width="match_parent"

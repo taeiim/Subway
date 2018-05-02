@@ -28,6 +28,8 @@
         <activity android:name=".Activity.AboutDevelperActivity"/>
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.ReviewActivity"/>
+        <activity android:name=".Activity.SearchActivity"/>
+        <activity android:name=".Activity.RelateHoneyActivity"/>
 
     </application>
 

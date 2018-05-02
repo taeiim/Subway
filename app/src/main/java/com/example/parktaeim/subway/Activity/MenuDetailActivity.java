@@ -38,28 +38,28 @@ public class MenuDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_detail);
 
         setUpHeartAnimation();
+        setUpStuffRecyclerView();
 
         Intent getIntent = getIntent();
         String menuName = getIntent.getExtras().getString("menuName");
         String menuPrice = getIntent.getExtras().getString("menuPrice");
-
         Log.d("MenuName=="+menuName,"  / MenuPrice=="+menuPrice);
-
-        setUpStuffRecyclerView();
 
         RelativeLayout reviewLayout = (RelativeLayout) findViewById(R.id.menuDetail_reviewLayout);
         reviewLayout.setOnClickListener(v->startActivity(new Intent(this,ReviewActivity.class)));
 
+        RelativeLayout relateLayout = (RelativeLayout) findViewById(R.id.menuDetail_relateHoneyLayout);
+        relateLayout.setOnClickListener(v->startActivity(new Intent(this, RelateHoneyActivity.class)));
+
         backIcon = (ImageView) findViewById(R.id.menuDetail_backIcon);
-        reviewFab = (FloatingActionButton) findViewById(R.id.menuDetail_reviewFab);
         backIcon.setOnClickListener(v->finish());
+
+        reviewFab = (FloatingActionButton) findViewById(R.id.menuDetail_reviewFab);
         reviewFab.setOnClickListener(v->{
             Intent intent = new Intent(this,ReviewWriteActivity.class);
             intent.putExtra("reviewType",0);
             startActivity(intent);
         });
-
-
 
     }
 

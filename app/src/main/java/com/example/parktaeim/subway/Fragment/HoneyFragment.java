@@ -10,10 +10,12 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.parktaeim.subway.Activity.HoneyAllActivity;
 import com.example.parktaeim.subway.Activity.HoneyRankActivity;
+import com.example.parktaeim.subway.Activity.SearchActivity;
 import com.example.parktaeim.subway.Adapter.BannerPagerAdapter;
 import com.example.parktaeim.subway.R;
 
@@ -39,6 +41,10 @@ public class HoneyFragment extends android.support.v4.app.Fragment {
 
         LinearLayout honeyRankIntentLayout = (LinearLayout) rootView.findViewById(R.id.rankHoneyIntentLayout);
         honeyRankIntentLayout.setOnClickListener(v-> startActivity(new Intent(getContext(), HoneyRankActivity.class)));
+
+        ImageView searchIcon = (ImageView) rootView.findViewById(R.id.honey_searchIcon);
+        searchIcon.setOnClickListener(v-> startActivity(new Intent(getContext(), SearchActivity.class)));
+
         return rootView;
     }
 

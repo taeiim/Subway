@@ -1,5 +1,6 @@
 package com.example.parktaeim.subway.Fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.example.parktaeim.subway.Activity.SearchActivity;
 import com.example.parktaeim.subway.Adapter.MenuAdapter;
 import com.example.parktaeim.subway.Adapter.MenuCategoryAdapter;
 import com.example.parktaeim.subway.Model.MenuCategoryItem;
@@ -58,6 +60,9 @@ public class MenuFragment extends Fragment {
 
         setUpMenuRecyclerView();
         setUpMenuCategory();
+
+        ImageView searchIcon = (ImageView) rootView.findViewById(R.id.menu_searchIcon);
+        searchIcon.setOnClickListener(v-> startActivity(new Intent(getContext(), SearchActivity.class)));
 
         return rootView;
     }
