@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.example.parktaeim.subway.Activity.HoneyAllActivity;
+import com.example.parktaeim.subway.Activity.HoneyEnrollmentActivity;
 import com.example.parktaeim.subway.Activity.HoneyRankActivity;
 import com.example.parktaeim.subway.Activity.SearchActivity;
 import com.example.parktaeim.subway.Adapter.BannerPagerAdapter;
@@ -44,6 +46,9 @@ public class HoneyFragment extends android.support.v4.app.Fragment {
 
         ImageView searchIcon = (ImageView) rootView.findViewById(R.id.honey_searchIcon);
         searchIcon.setOnClickListener(v-> startActivity(new Intent(getContext(), SearchActivity.class)));
+
+        RelativeLayout intentEnrollBtn = (RelativeLayout) rootView.findViewById(R.id.intentHoneyEnrollBtn);
+        intentEnrollBtn.setOnClickListener(v->startActivity(new Intent(getContext(),HoneyEnrollmentActivity.class)));
 
         return rootView;
     }
