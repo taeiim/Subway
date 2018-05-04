@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorWhite">
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/honeyRank_toolbar"
@@ -33,9 +33,9 @@
                 <ImageView
                     android:layout_width="12dp"
                     android:layout_height="12dp"
+                    android:layout_centerInParent="true"
                     android:src="@drawable/ic_cancel_white"
-                    android:tint="@color/colorTextDarkPink"
-                    android:layout_centerInParent="true"/>
+                    android:tint="@color/colorTextDarkPink" />
             </RelativeLayout>
 
             <View
@@ -55,10 +55,10 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="50"
+            android:layout_centerVertical="true"
             android:layout_margin="8dp"
-            android:progress="10"
-            android:layout_centerVertical="true"/>
+            android:max="50"
+            android:progress="10" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -91,8 +91,23 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <com.example.parktaeim.subway.VerticalViewPager
-        android:id="@+id/honeyEnroll_verticalViewPager"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <com.example.parktaeim.subway.VerticalViewPager
+            android:id="@+id/honeyEnroll_verticalViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/honeyEnroll_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            app:tabBackground="@drawable/verticalviewpager_tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            />
+
+    </RelativeLayout>
 </LinearLayout>

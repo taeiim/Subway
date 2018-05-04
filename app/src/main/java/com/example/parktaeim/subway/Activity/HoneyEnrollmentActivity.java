@@ -3,6 +3,7 @@ package com.example.parktaeim.subway.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
@@ -30,5 +31,8 @@ public class HoneyEnrollmentActivity extends FragmentActivity {
     private void setUpVerticalViewPager() {
         VerticalViewPager verticalViewPager = (VerticalViewPager) findViewById(R.id.honeyEnroll_verticalViewPager);
         verticalViewPager.setAdapter(new VerticalViewpagerAdapter(getSupportFragmentManager()));
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.honeyEnroll_tabLayout);
+        tabLayout.setupWithViewPager(verticalViewPager,true);
+
     }
 }
