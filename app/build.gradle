@@ -37,4 +37,5 @@ dependencies {
     compile 'com.aurelhubert:ahbottomnavigation:2.1.0'
     compile 'info.hoang8f:android-segmented:1.0.6'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+    compile 'com.sothree.slidinguppanel:library:3.4.0'
 }

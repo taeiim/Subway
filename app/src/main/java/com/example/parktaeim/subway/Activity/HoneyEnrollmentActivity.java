@@ -38,10 +38,6 @@ public class HoneyEnrollmentActivity extends FragmentActivity {
         verticalViewPager.setAdapter(new VerticalViewpagerAdapter(getSupportFragmentManager()));
         TabLayout tabLayout = (TabLayout) findViewById(R.id.honeyEnroll_tabLayout);
         tabLayout.setupWithViewPager(verticalViewPager,true);
-//        tabLayout.setRotation(tabLayout.getRotation()+90);
-
         tabLayout.setAnimation(AnimationUtils.loadAnimation(this,R.anim.rotate_tablayout));
-//        tabLayout.setEnabled(false);
-//        tabLayout.setClickable(false);
     }
 }
