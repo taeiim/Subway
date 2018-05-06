@@ -17,12 +17,13 @@
             android:id="@+id/enrollRecycler_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
             <ImageView
                 android:id="@+id/enrollRecycler_imgView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:src="@drawable/img_subway"
                 android:paddingTop="2dp"/>
 
@@ -31,12 +32,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="에그마요"
+                android:text="이탈리안 비엠티"
                 android:textColor="#000"
                 android:gravity="center"
-                android:paddingBottom="8dp"
                 android:fontFamily="@font/font_bmjua_regular"
-                android:textSize="13dp"/>
+                android:textSize="13dp" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

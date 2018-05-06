@@ -64,6 +64,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
+//            this.setIsRecyclable(false);
             imageView = (ImageView) itemView.findViewById(R.id.enrollRecycler_imgView);
             nameTv = (TextView) itemView.findViewById(R.id.enrollRecycler_nameTv);
             cardLayout = (LinearLayout) itemView.findViewById(R.id.enrollRecycler_layout);

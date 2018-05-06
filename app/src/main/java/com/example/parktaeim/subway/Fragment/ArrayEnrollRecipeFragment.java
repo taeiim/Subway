@@ -60,7 +60,6 @@ public class ArrayEnrollRecipeFragment extends Fragment {
                 RecipeAdapter recipeAdapter = new RecipeAdapter(recipeRecyclerItems);
                 menuRecyclerView.setAdapter(recipeAdapter);
 
-                menuRecyclerView.getChildAt(selectPos);
                 menuRecyclerView.addOnItemTouchListener(new RecyclerViewClickListener(getContext(), menuRecyclerView, new RecyclerViewClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
@@ -69,11 +68,11 @@ public class ArrayEnrollRecipeFragment extends Fragment {
 //                        menuRecyclerView.getChildAt(position).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(R.drawable.solid_yellow_recipecard);  //currentPos
 
                         if(selectPos == position){
-                            menuRecyclerView.getChildAt(position).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);
+                            menuRecyclerView.findViewHolderForAdapterPosition(position).itemView.findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);
                             selectPos = 0;
                         }else {
-                            menuRecyclerView.getChildAt(selectPos).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);  //selectPos
-                            menuRecyclerView.getChildAt(position).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(R.drawable.solid_yellow_recipecard);  //currentPos
+                            menuRecyclerView.findViewHolderForAdapterPosition(selectPos).itemView.findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);  //selectPos
+                            menuRecyclerView.findViewHolderForAdapterPosition(position).itemView.findViewById(R.id.enrollRecycler_layout).setBackgroundResource(R.drawable.solid_yellow_recipecard);  //currentPos
                             selectPos = position;
                         }
                     }
