@@ -9,8 +9,8 @@
         android:id="@+id/event_toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
-        app:contentInsetStart="0dp"
-        android:background="@color/colorWhite">
+        android:background="@color/colorWhite"
+        app:contentInsetStart="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,56 +19,73 @@
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="25dp"
-                android:src="@drawable/logo_subway"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo_subway" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#E6E6E6"
-                android:layout_alignParentBottom="true"/>
+                android:layout_alignParentBottom="true"
+                android:background="#E6E6E6" />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
-    <info.hoang8f.android.segmented.SegmentedGroup
-        android:id="@+id/event_segmentedGroup"
+    <!--<info.hoang8f.android.segmented.SegmentedGroup-->
+    <!--android:id="@+id/event_segmentedGroup"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:layout_marginLeft="24dp"-->
+    <!--android:layout_marginRight="24dp"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:background="@color/colorWhite"-->
+    <!--android:checkedButton="@id/button1"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:sc_border_width="2dp"-->
+    <!--app:sc_checked_text_color="@color/colorWhite"-->
+    <!--app:sc_corner_radius="10dp"-->
+    <!--app:sc_tint_color="#32B238">-->
+
+    <!--<RadioButton-->
+    <!--android:id="@+id/button1"-->
+    <!--style="@style/RadioButton"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="진행중인 이벤트"-->
+    <!--android:textSize="12dp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<RadioButton-->
+    <!--android:id="@+id/button2"-->
+    <!--style="@style/RadioButton"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:text="종료된 이벤트"-->
+    <!--android:textSize="12dp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--</info.hoang8f.android.segmented.SegmentedGroup>-->
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/event_tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_height="35dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="16dp"
-        android:background="@color/colorWhite"
-        android:checkedButton="@id/button1"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:sc_border_width="2dp"
-        app:sc_checked_text_color="@color/colorWhite"
-        app:sc_corner_radius="10dp"
-        app:sc_tint_color="#32B238">
+        android:background="@drawable/solid_event_tab"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="#000"
+        app:tabTextAppearance="@style/TabTextSmall"
+        app:tabTextColor="#8C8C8C">
 
-        <RadioButton
-            android:id="@+id/button1"
-            style="@style/RadioButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="진행중인 이벤트"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-        <RadioButton
-            android:id="@+id/button2"
-            style="@style/RadioButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="종료된 이벤트"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-    </info.hoang8f.android.segmented.SegmentedGroup>
+    </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/eventViewPager"
@@ -76,7 +93,6 @@
         android:layout_height="match_parent">
 
     </android.support.v4.view.ViewPager>
-
 
 
 </LinearLayout>

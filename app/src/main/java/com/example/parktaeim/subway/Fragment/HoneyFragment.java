@@ -64,6 +64,10 @@ public class HoneyFragment extends android.support.v4.app.Fragment {
         ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.honey_banner_viewPager);
         TabLayout tabLayout = (TabLayout) rootView.findViewById(R.id.honey_banner_tabLayout);
 
+        //        viewPager.setPageMargin(30);
+//        viewPager.setClipToPadding(false);
+//        viewPager.setPadding(50, 0, 50, 0);
+
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager,true);
 

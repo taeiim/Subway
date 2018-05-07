@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -52,35 +53,34 @@ public class EventFragment extends Fragment {
         adapter.addFragment(new EventRecyclerFragment(), "진행중 이벤트");
         adapter.addFragment(new EventRecyclerFragment(), "종료된 이벤트");
         viewPager.setAdapter(adapter);
+        TabLayout tabLayout = (TabLayout) rootView.findViewById(R.id.event_tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
+//
+//        SegmentedGroup eventSegmentedGroup = (SegmentedGroup) rootView.findViewById(R.id.event_segmentedGroup);
+//        RadioButton radioButton1 = (RadioButton) rootView.findViewById(R.id.button1);
+//        RadioButton radioButton2 = (RadioButton) rootView.findViewById(R.id.button2);
 
-        SegmentedGroup eventSegmentedGroup = (SegmentedGroup) rootView.findViewById(R.id.event_segmentedGroup);
-        RadioButton radioButton1 = (RadioButton) rootView.findViewById(R.id.button1);
-        RadioButton radioButton2 = (RadioButton) rootView.findViewById(R.id.button2);
-
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                if (position == 0) {
-                    eventSegmentedGroup.check(R.id.button1);
-                } else if (position == 1) {
-                    eventSegmentedGroup.check(R.id.button2);
-
-                }
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        radioButton1.setOnClickListener(v -> viewPager.setCurrentItem(0));
-        radioButton2.setOnClickListener(v -> viewPager.setCurrentItem(1));
+//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//                if (position == 0) {
+//                    eventSegmentedGroup.check(R.id.button1);
+//                } else if (position == 1) {
+//                    eventSegmentedGroup.check(R.id.button2);
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//
+//            }
+//        });
 
     }
 
