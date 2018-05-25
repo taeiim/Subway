@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.parktaeim.subway.Adapter.RecipeAdapter;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 
 public class ArrayEnrollRecipeFragment extends Fragment {
     int position;
-    int selectPos;
+    int selectPos = -1;
 
     public static ArrayEnrollRecipeFragment newInstance(int position) {
         ArrayEnrollRecipeFragment fragment = new ArrayEnrollRecipeFragment();
@@ -60,28 +61,47 @@ public class ArrayEnrollRecipeFragment extends Fragment {
                 RecipeAdapter recipeAdapter = new RecipeAdapter(recipeRecyclerItems);
                 menuRecyclerView.setAdapter(recipeAdapter);
 
-                menuRecyclerView.addOnItemTouchListener(new RecyclerViewClickListener(getContext(), menuRecyclerView, new RecyclerViewClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        Log.d("selectPos == ", String.valueOf(selectPos));
-                        Log.d("clickPos == ", String.valueOf(position));
-//                        menuRecyclerView.getChildAt(position).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(R.drawable.solid_yellow_recipecard);  //currentPos
-
-                        if(selectPos == position){
-                            menuRecyclerView.findViewHolderForAdapterPosition(position).itemView.findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);
-                            selectPos = 0;
-                        }else {
-                            menuRecyclerView.findViewHolderForAdapterPosition(selectPos).itemView.findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);  //selectPos
-                            menuRecyclerView.findViewHolderForAdapterPosition(position).itemView.findViewById(R.id.enrollRecycler_layout).setBackgroundResource(R.drawable.solid_yellow_recipecard);  //currentPos
-                            selectPos = position;
-                        }
-                    }
-
-                    @Override
-                    public void onLongItemClick(View view, int position) {
-
-                    }
-                }));
+//
+//                menuRecyclerView.addOnItemTouchListener(new RecyclerViewClickListener(getContext(), menuRecyclerView, new RecyclerViewClickListener.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(View view, int position) {
+//                        View row = menuRecyclerView.getLayoutManager().findViewByPosition(position);
+//
+//                        Log.d("selectPos == ", String.valueOf(selectPos));
+//                        Log.d("clickPos == ", String.valueOf(position));
+//
+//                        if(selectPos == position){
+//                            menuRecyclerView.getLayoutManager().findViewByPosition(selectPos).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);
+//                            selectPos = -1;
+//                        }else {
+////                            menuRecyclerView.getLayoutManager().findViewByPosition(selectPos).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);  //selectPos
+//                            menuRecyclerView.getLayoutManager().findViewByPosition(position).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(R.drawable.solid_yellow_recipecard);  //currentPos
+////                            menuRecyclerView.findViewHolderForAdapterPosition(selectPos).itemView.setBackgroundResource(0);  //selectPos
+////                            menuRecyclerView.findViewHolderForAdapterPosition(position).itemView.setBackgroundResource(R.drawable.solid_yellow_recipecard);  //currentPos
+//
+//                            selectPos = position;
+//                        }
+//
+////
+////                        if(selectPos == position){
+////                            menuRecyclerView.getChildAt(position).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);
+////                            selectPos = 0;
+////                        }else {
+////                            menuRecyclerView.getChildAt(selectPos).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(0);  //selectPos
+////                            menuRecyclerView.getChildAt(position).findViewById(R.id.enrollRecycler_layout).setBackgroundResource(R.drawable.solid_yellow_recipecard);  //currentPos
+//////                            menuRecyclerView.findViewHolderForAdapterPosition(selectPos).itemView.setBackgroundResource(0);  //selectPos
+//////                            menuRecyclerView.findViewHolderForAdapterPosition(position).itemView.setBackgroundResource(R.drawable.solid_yellow_recipecard);  //currentPos
+////
+////
+////                            selectPos = position;
+////                        }
+//                    }
+//
+//                    @Override
+//                    public void onLongItemClick(View view, int position) {
+//
+//                    }
+//                }));
                 break;
             case 1:
                 break;

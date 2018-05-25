@@ -38,17 +38,23 @@
         <RelativeLayout
             android:id="@+id/kakaoLoginBtn"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/roundbtn_yellow"
             android:gravity="center_horizontal">
+
+            <com.kakao.usermgmt.LoginButton
+                android:id="@+id/kakaoLoginBtnOriginal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
 
             <ImageView
                 android:id="@+id/kakaoIcon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="6dp"
+                android:layout_marginRight="8dp"
                 android:src="@drawable/ic_kakaotalk" />
 
             <TextView
@@ -56,15 +62,16 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/kakaoIcon"
-                android:text="카카오톡으로 로그인"
+                android:text="카카오계정으로 로그인"
                 android:textColor="#3B1F1E"
-                android:textSize="14dp" />
+                android:textSize="15dp"
+                android:textStyle="bold"/>
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/facebookLoginBtn"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:background="@drawable/roundbtn_blue"
             android:gravity="center_horizontal">
 
@@ -73,7 +80,7 @@
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="6dp"
+                android:layout_marginRight="8dp"
                 android:src="@drawable/ic_facebook"
                 android:padding="1dp"/>
 
@@ -84,7 +91,8 @@
                 android:layout_toRightOf="@+id/facebookIcon"
                 android:text="페이스북으로 로그인"
                 android:textColor="@color/colorWhite"
-                android:textSize="14dp" />
+                android:textSize="15dp"
+                android:textStyle="bold"/>
         </RelativeLayout>
 
     </LinearLayout>

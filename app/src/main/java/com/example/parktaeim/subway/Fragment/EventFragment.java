@@ -9,22 +9,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
 
-import com.example.parktaeim.subway.Activity.EventDetailActivity;
 import com.example.parktaeim.subway.Adapter.EventAdapter;
 import com.example.parktaeim.subway.Adapter.FragmentViewPagerAdapter;
 import com.example.parktaeim.subway.Model.EventItem;
 import com.example.parktaeim.subway.R;
-import com.example.parktaeim.subway.RecyclerViewClickListener;
 
 import java.util.ArrayList;
-
-import info.hoang8f.android.segmented.SegmentedGroup;
 
 /**
  * Created by parktaeim on 2018. 4. 15..
@@ -55,33 +49,6 @@ public class EventFragment extends Fragment {
         viewPager.setAdapter(adapter);
         TabLayout tabLayout = (TabLayout) rootView.findViewById(R.id.event_tabLayout);
         tabLayout.setupWithViewPager(viewPager);
-//
-//        SegmentedGroup eventSegmentedGroup = (SegmentedGroup) rootView.findViewById(R.id.event_segmentedGroup);
-//        RadioButton radioButton1 = (RadioButton) rootView.findViewById(R.id.button1);
-//        RadioButton radioButton2 = (RadioButton) rootView.findViewById(R.id.button2);
-
-//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//                if (position == 0) {
-//                    eventSegmentedGroup.check(R.id.button1);
-//                } else if (position == 1) {
-//                    eventSegmentedGroup.check(R.id.button2);
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//
-//            }
-//        });
-
     }
 
 }

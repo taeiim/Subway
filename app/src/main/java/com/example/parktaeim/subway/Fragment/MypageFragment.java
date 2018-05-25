@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.parktaeim.subway.Activity.LoginActivity;
 import com.example.parktaeim.subway.Activity.ReviewWriteActivity;
 import com.example.parktaeim.subway.Activity.SettingsActivity;
 import com.example.parktaeim.subway.R;
@@ -35,6 +36,9 @@ public class MypageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_mypage,container,false);
+
+        TextView goLoginBtn = (TextView) rootView.findViewById(R.id.mypage_loginBtn);
+        goLoginBtn.setOnClickListener(v-> startActivity(new Intent(getContext(), LoginActivity.class)));
 
         ImageView settingsIcon = (ImageView) rootView.findViewById(R.id.mypage_settingsBtn);
         settingsIcon.setOnClickListener(v->startActivity(new Intent(getContext(), SettingsActivity.class)));

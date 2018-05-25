@@ -4,9 +4,9 @@
     <color name="colorPrimaryDark">#FCBD11</color>
     <color name="colorAccent">#029545</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="darkGray">#424141</color>
+    <color name="darkGray">#898989</color>
     <color name="colorTextDarkPink">#E64C3C</color>
-    <color name="lightGray">#898989</color>
+    <color name="lightGray">#BEBEBE</color>
     <color name="lightlightGray">#E2E2E2</color>
     <color name="progressBackGray">#DEDEDE</color>
 </resources>

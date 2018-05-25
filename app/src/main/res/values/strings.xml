@@ -1,4 +1,5 @@
 <resources>
+    <string name="kakao_app_key">203c41df2e43913cfa646fd6fd933902</string>
     <string name="app_name">Subway</string>
     <string name="tab1">꿀조합</string>
     <string name="tab2">메뉴</string>

@@ -1,8 +1,14 @@
 package com.example.parktaeim.subway.Activity;
 
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -12,6 +18,9 @@ import com.example.parktaeim.subway.Fragment.MenuFragment;
 import com.example.parktaeim.subway.Fragment.MypageFragment;
 import com.example.parktaeim.subway.Fragment.StoreFragment;
 import com.example.parktaeim.subway.R;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
     public static AHBottomNavigation bottomTabLayout;

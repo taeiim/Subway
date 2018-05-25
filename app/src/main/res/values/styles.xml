@@ -11,6 +11,7 @@
 
     <style name="TabTextSmall" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">13dp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TabTextVerySmall" parent="TextAppearance.Design.Tab">

@@ -180,6 +180,21 @@
                         android:gravity="center_vertical">
 
                         <TextView
+                            android:id="@+id/mypage_loginBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@id/mypage_profileEditBtn"
+                            android:background="@drawable/solid_white"
+                            android:paddingBottom="4dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:paddingTop="4dp"
+                            android:text="로그인"
+                            android:textSize="10dp" />
+
+                        <TextView
                             android:id="@+id/mypage_profileEditBtn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

@@ -30,12 +30,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    compile group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.android.support:cardview-v7:26.1.0'
 
     compile 'com.aurelhubert:ahbottomnavigation:2.1.0'
-    compile 'info.hoang8f:android-segmented:1.0.6'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.sothree.slidinguppanel:library:3.4.0'
+
 }

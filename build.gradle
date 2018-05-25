@@ -20,9 +20,10 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            url "https://maven.google.com"
-        }
+        mavenCentral()
+        maven { url "https://maven.google.com" }
+        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+
     }
 }
 
