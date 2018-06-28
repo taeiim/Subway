@@ -68,12 +68,12 @@ public class MenuDetailActivity extends AppCompatActivity {
         RecyclerView.LayoutManager stuffLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         stuffRecyclerView.setLayoutManager(stuffLayoutManager);
 
-        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
-        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
-        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
-        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
-        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
-        menuStuffItemArrayList.add(new MenuStuffItem("dlkdslfk","햄 4장"));
+        int[] stuffImgArr = {R.drawable.img_stuff_pepperoni,R.drawable.img_stuff_sallami, R.drawable.img_stuff_cheeze, R.drawable.img_stuff_ham, R.drawable.img_stuff_mayoneze, R.drawable.img_stuff_mustard};
+        String[] stuffNameArr = {"페퍼로니 3장","살라미 3장","치즈 2장", "햄 2장","마요네즈","머스타드"};
+
+        for(int i=0;i<stuffImgArr.length;i++){
+            menuStuffItemArrayList.add(new MenuStuffItem(stuffImgArr[i],stuffNameArr[i]));
+        }
 
         MenuDetailStuffAdapter stuffAdapter = new MenuDetailStuffAdapter(menuStuffItemArrayList);
         stuffRecyclerView.setAdapter(stuffAdapter);

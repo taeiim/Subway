@@ -40,6 +40,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(EventAdapter.ViewHolder holder, int position) {
+        holder.eventImgView.setImageResource(eventItemArrayList.get(position).getSmallImg());
         holder.eventTitleTv.setText(eventItemArrayList.get(position).getEventTitle());
         holder.eventPeriodTv.setText(eventItemArrayList.get(position).getEventPeriod());
 

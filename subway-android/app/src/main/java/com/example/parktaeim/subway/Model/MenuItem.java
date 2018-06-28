@@ -5,23 +5,23 @@ package com.example.parktaeim.subway.Model;
  */
 
 public class MenuItem {
-    private String menuImg;
+    private int menuImg;
     private String name;
     private String price;
     private float star;
 
-    public MenuItem(String menuImg, String name, String price, float star) {
+    public MenuItem(int menuImg, String name, String price, float star) {
         this.menuImg = menuImg;
         this.name = name;
         this.price = price;
         this.star = star;
     }
 
-    public String getMenuImg() {
+    public int getMenuImg() {
         return menuImg;
     }
 
-    public void setMenuImg(String menuImg) {
+    public void setMenuImg(int menuImg) {
         this.menuImg = menuImg;
     }
 

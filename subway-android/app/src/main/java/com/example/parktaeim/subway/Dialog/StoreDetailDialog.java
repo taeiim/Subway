@@ -17,12 +17,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.parktaeim.subway.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
  * Created by parktaeim on 2018. 4. 19..
  */
 
-public class StoreDetailDialog extends android.support.v4.app.DialogFragment {
+public class StoreDetailDialog extends android.support.v4.app.DialogFragment implements OnMapReadyCallback{
     private View rootView;
     private TextView nameTv;
     private TextView addressTv;
@@ -32,6 +38,9 @@ public class StoreDetailDialog extends android.support.v4.app.DialogFragment {
     private TextView findRoadBtn;
     private ImageView callIcon;
     private RelativeLayout cancelBtn;
+    private GoogleMap googleMap;
+
+    private String storeName;
 
     public StoreDetailDialog() {
     }
@@ -39,7 +48,10 @@ public class StoreDetailDialog extends android.support.v4.app.DialogFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.dialog_store_detail, container);
+        rootView = inflater.inflate(R.layout.dialog_store_detail, container,false);
+
+//        SupportMapFragment mapFragment = (SupportMapFragment) this.getChildFragmentManager().findFragmentById(R.id.storeDialog_googleMap);
+//        mapFragment.getMapAsync(this);
 
         nameTv = (TextView) rootView.findViewById(R.id.storeDialog_storeNameTv);
         addressTv = (TextView) rootView.findViewById(R.id.storeDialog_addressTv);
@@ -61,8 +73,9 @@ public class StoreDetailDialog extends android.support.v4.app.DialogFragment {
         Bundle getArgs = getArguments();
         String tellNum = getArgs.getString("tellNum");
         String openingTime = getArgs.getString("openingTime");
+        storeName = getArgs.getString("name");
 
-        nameTv.setText(getArgs.getString("name"));
+        nameTv.setText(storeName);
         addressTv.setText(getArgs.getString("address"));
         tellNumTv.setText(tellNum);
         openTimeTv.setText(openingTime);
@@ -73,4 +86,11 @@ public class StoreDetailDialog extends android.support.v4.app.DialogFragment {
 
     }
 
+    @Override
+    public void onMapReady(GoogleMap map) {
+        googleMap = map;
+        LatLng seoul = new LatLng(37.540705,126.956764);
+        googleMap.addMarker(new MarkerOptions().position(seoul).title(storeName));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(seoul));
+    }
 }

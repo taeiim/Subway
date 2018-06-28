@@ -82,7 +82,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="140dp"
                         android:layout_marginBottom="16dp"
-                        android:src="@drawable/img_subway" />
+                        android:src="@drawable/img_blt" />
 
                     <TextView
                         android:id="@+id/menuDetail_menuNameTv"

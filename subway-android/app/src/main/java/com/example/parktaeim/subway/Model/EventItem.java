@@ -7,16 +7,16 @@ package com.example.parktaeim.subway.Model;
 public class EventItem {
     private String eventTitle;
     private String eventPeriod;
-    private String smallImg;
-    private String bigImg;
+    private int smallImg;
+    private int bigImg;
 
-    public EventItem(String eventTitle, String eventPeriod, String bigImg) {
+    public EventItem(String eventTitle, String eventPeriod, int bigImg) {
         this.eventTitle = eventTitle;
         this.eventPeriod = eventPeriod;
         this.bigImg = bigImg;
     }
 
-    public EventItem(String eventTitle, String eventPeriod, String smallImg, String bigImg) {
+    public EventItem(String eventTitle, String eventPeriod, int smallImg, int bigImg) {
         this.eventTitle = eventTitle;
         this.eventPeriod = eventPeriod;
         this.smallImg = smallImg;
@@ -39,19 +39,19 @@ public class EventItem {
         this.eventPeriod = eventPeriod;
     }
 
-    public String getSmallImg() {
+    public int getSmallImg() {
         return smallImg;
     }
 
-    public void setSmallImg(String smallImg) {
+    public void setSmallImg(int smallImg) {
         this.smallImg = smallImg;
     }
 
-    public String getBigImg() {
+    public int getBigImg() {
         return bigImg;
     }
 
-    public void setBigImg(String bigImg) {
+    public void setBigImg(int bigImg) {
         this.bigImg = bigImg;
     }
 }

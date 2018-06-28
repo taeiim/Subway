@@ -5,19 +5,19 @@ package com.example.parktaeim.subway.Model;
  */
 
 public class MenuStuffItem {
-    private String stuffImg;
+    private int stuffImg;
     private String stuffText;
 
-    public MenuStuffItem(String stuffImg, String stuffText) {
+    public MenuStuffItem(int stuffImg, String stuffText) {
         this.stuffImg = stuffImg;
         this.stuffText = stuffText;
     }
 
-    public String getStuffImg() {
+    public int getStuffImg() {
         return stuffImg;
     }
 
-    public void setStuffImg(String stuffImg) {
+    public void setStuffImg(int stuffImg) {
         this.stuffImg = stuffImg;
     }
 

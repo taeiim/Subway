@@ -32,6 +32,7 @@ public class MenuDetailStuffAdapter extends RecyclerView.Adapter<MenuDetailStuff
 
     @Override
     public void onBindViewHolder(MenuDetailStuffAdapter.ViewHolder holder, int position) {
+        holder.stuffImgView.setImageResource(menuStuffItemArrayList.get(position).getStuffImg());
         holder.stuffTv.setText(menuStuffItemArrayList.get(position).getStuffText());
     }
 

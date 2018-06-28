@@ -74,7 +74,7 @@ public class HoneyDetailActivity extends AppCompatActivity {
         ArrayList<Drawable> bannerImgArrayList = new ArrayList<>();
         bannerImgArrayList.add(ContextCompat.getDrawable(this,R.drawable.img_subway_full));
         bannerImgArrayList.add(ContextCompat.getDrawable(this,R.drawable.img_subway_full));
-        bannerImgArrayList.add(ContextCompat.getDrawable(this,R.drawable.img_subway));
+        bannerImgArrayList.add(ContextCompat.getDrawable(this,R.drawable.img_blt));
         bannerImgArrayList.add(ContextCompat.getDrawable(this,R.drawable.img_banner1));
 
         BannerPagerAdapter adapter = new BannerPagerAdapter(this,bannerImgArrayList);

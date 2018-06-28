@@ -18,7 +18,7 @@
                 android:id="@+id/allhoneyGrid_imgView"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
-                android:src="@drawable/img_subway" />
+                android:src="@drawable/img_blt" />
 
             <RelativeLayout
                 android:layout_width="match_parent"

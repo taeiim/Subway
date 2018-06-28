@@ -55,10 +55,10 @@ public class HoneyFragment extends android.support.v4.app.Fragment {
 
     private void setUpBanner() {
         ArrayList<Drawable> bannerImgArrayList = new ArrayList<>();
+        bannerImgArrayList.add(ContextCompat.getDrawable(getContext(),R.drawable.img_event_aborcado2));
         bannerImgArrayList.add(ContextCompat.getDrawable(getContext(),R.drawable.img_banner1));
-        bannerImgArrayList.add(ContextCompat.getDrawable(getContext(),R.drawable.img_banner1));
-        bannerImgArrayList.add(ContextCompat.getDrawable(getContext(),R.drawable.img_store_dialog_top));
-        bannerImgArrayList.add(ContextCompat.getDrawable(getContext(),R.drawable.img_store_dialog_top));
+        bannerImgArrayList.add(ContextCompat.getDrawable(getContext(),R.drawable.img_event_aborseseries2));
+        bannerImgArrayList.add(ContextCompat.getDrawable(getContext(),R.drawable.img_event_puldfork2));
 
         BannerPagerAdapter adapter = new BannerPagerAdapter(getContext(),bannerImgArrayList);
         ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.honey_banner_viewPager);

@@ -48,6 +48,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
     public void onBindViewHolder(MenuAdapter.ViewHolder holder, int position) {
         context = holder.itemView.getContext();
 
+        holder.menuImgView.setImageResource(menuItemArrayList.get(position).getMenuImg());
         holder.nameTv.setText(menuItemArrayList.get(position).getName());
         holder.priceTv.setText(menuItemArrayList.get(position).getPrice());
         float starValue = menuItemArrayList.get(position).getStar();

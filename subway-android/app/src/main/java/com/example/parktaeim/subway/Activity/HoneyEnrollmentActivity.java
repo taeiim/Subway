@@ -44,6 +44,7 @@ public class HoneyEnrollmentActivity extends FragmentActivity {
         VerticalViewPager verticalViewPager = (VerticalViewPager) findViewById(R.id.honeyEnroll_verticalViewPager);
         verticalViewPager.setAdapter(new VerticalViewpagerAdapter(getSupportFragmentManager()));
         verticalViewPager.setOffscreenPageLimit(6);
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.honeyEnroll_tabLayout);
         tabLayout.setupWithViewPager(verticalViewPager, true);
         tabLayout.setAnimation(AnimationUtils.loadAnimation(this, R.anim.rotate_tablayout));

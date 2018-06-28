@@ -3,6 +3,8 @@
     package="com.example.parktaeim.subway">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:name=".GlobalApplication"
@@ -39,6 +41,10 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAYX_b4wtxTb1KR5lmSVB_GHn-pvm90S3Y"/>
     </application>
 
 </manifest>

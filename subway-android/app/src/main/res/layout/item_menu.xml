@@ -38,7 +38,7 @@
                     android:id="@+id/menu_imgView"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/img_subway"
+                    android:src="@drawable/img_blt"
                     android:padding="4dp"/>
 
                 <TextView

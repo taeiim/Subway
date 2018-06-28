@@ -99,7 +99,6 @@ public class MenuFragment extends Fragment {
         }
 
         setUpTabText(0,tabs);
-        // 1 Category RecyclerView Click Color Setting
         categoryRecyclerView.addOnItemTouchListener(new RecyclerViewClickListener(getContext(), categoryRecyclerView, new RecyclerViewClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
@@ -186,11 +185,14 @@ public class MenuFragment extends Fragment {
         layoutManager = new GridLayoutManager(getContext(), 2);
         menuRecyclerView.setLayoutManager(layoutManager);
 
-        menuItemArrayList.add(new MenuItem("dslkj", "비엘티", "4800원", 4.0f));
-        menuItemArrayList.add(new MenuItem("dslkj", "비엘티", "4800원", 2.0f));
-        menuItemArrayList.add(new MenuItem("dslkj", "비엘티", "4800원", 3.0f));
-        menuItemArrayList.add(new MenuItem("dslkj", "비엘티", "4800원", 4.0f));
-        menuItemArrayList.add(new MenuItem("dslkj", "비엘티", "4800원", 4.0f));
+        menuItemArrayList.add(new MenuItem(R.drawable.img_blt, "비엘티", "4700원", 4.5f));
+        menuItemArrayList.add(new MenuItem(R.drawable.img_meatball, "미트볼", "4700원", 2.5f));
+        menuItemArrayList.add(new MenuItem(R.drawable.img_ham, "햄", "4300원", 3.0f));
+        menuItemArrayList.add(new MenuItem(R.drawable.img_eggmayo, "에그마요", "4300원", 4.0f));
+        menuItemArrayList.add(new MenuItem(R.drawable.img_spicyitalian, "스파이시 이탈리안", "5100원", 4.0f));
+        menuItemArrayList.add(new MenuItem(R.drawable.img_loastchick, "로스트 치킨", "5500원", 4.0f));
+        menuItemArrayList.add(new MenuItem(R.drawable.img_chamchi, "참치", "4300원", 3.7f));
+        menuItemArrayList.add(new MenuItem(R.drawable.img_turkeybacon, "터키베이컨", "5500원", 4.2f));
 
         adapter = new MenuAdapter(menuItemArrayList);
         menuRecyclerView.setAdapter(adapter);

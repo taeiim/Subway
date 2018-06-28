@@ -86,8 +86,9 @@
             <ImageView
                 android:id="@+id/eventDetail_imgView"
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
-                android:layout_margin="16dp"/>
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:scaleType="fitStart"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
